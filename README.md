@@ -1,7 +1,7 @@
 # My_nutrition_mate
 > 2020 Summer Human Interaction: Group project
-f
-~~머라머라
+
+    머라머라
 
 ![](../header.png)
 
