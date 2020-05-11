@@ -67,7 +67,7 @@
             text
             to="/"
           >
-            아주대 CCC
+            My Nutrition Mate
           </v-btn>
         </v-toolbar-title>
   
