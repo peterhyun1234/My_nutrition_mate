@@ -53,7 +53,7 @@
             <v-flex xs12 sm6 md4>
               <v-card-text>
                 <p class="headline text--primary mt-3">
-                  My Nutrition 웹페이지
+                  아주대 CCC 웹페이지
                 </p>
                 <p class="subheading text--primary mt-3">
                   아주대 CCC에 오신 여러분을 하나님의 이름으로 축복하고, 환영합니다 :D
