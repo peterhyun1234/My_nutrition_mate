@@ -162,15 +162,15 @@ export default {
     return {
       navdrawer: false,
       drawerItems: [
-        { title: '브릿지 카드(미구현)', icon: 'mdi-bridge', to: '/bridge'},
-        { title: '사랑의 언어 테스트', icon: 'mdi-account-heart-outline', to: '/langOflove'},
-        { title: 'CCC 정보(미구현)', icon: 'mdi-folder-information-outline', to: '/info/ccc'},
-        { title: '아주대 기도제목(미구현)', icon: 'mdi-sprout' , to: '/prayer/ajou'},
-        { title: '개인 기도제목(미구현)', icon: 'mdi-sprout-outline' , to: '/prayer/personal'},
+        { title: '기능1(미구현)', icon: 'mdi-bridge', to: '/bridge'},
+        { title: '기능2(미구현)', icon: 'mdi-account-heart-outline', to: '/langOflove'},
+        { title: '기능3(미구현)', icon: 'mdi-folder-information-outline', to: '/info/ccc'},
+        { title: '기능4(미구현)', icon: 'mdi-sprout' , to: '/prayer/ajou'},
+        { title: '기능5(미구현)', icon: 'mdi-sprout-outline' , to: '/prayer/personal'},
       ],
       drawerEtcItems: [
-        { title: '대표단에게 건의(미구현)', icon: 'mdi-email-send-outline', to: '/request/delegation'},
-        { title: '간사님에게 건의(미구현)', icon: 'mdi-email-send', to: '/request/steward'},
+        { title: '기능5(미구현)', icon: 'mdi-email-send-outline', to: '/request/delegation'},
+        { title: '기능5(미구현)', icon: 'mdi-email-send', to: '/request/steward'},
         { title: 'About', icon: 'mdi-help-circle-outline', to: '/info/about'},
       ],
       footerItems: [
