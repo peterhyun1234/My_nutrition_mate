@@ -294,7 +294,7 @@ export default {
       ],
       bridgeItems: [
         {
-          src: 'https://i.imgur.com/V0Pggmc.png',
+          src: 'https://i.imgur.com/V0Pggmc.png', //667 X 571 needed
         },
         {
           src: 'https://i.imgur.com/4pgyWuV.png',
