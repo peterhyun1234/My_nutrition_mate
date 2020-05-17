@@ -5,7 +5,7 @@
         <v-list-item class="ma-0 pa-0">
           <v-list-item-content class="ma-0 pa-0">
             <v-list-item-title class="title" >
-              <v-img :aspect-ratio="16/9" src="https://i.imgur.com/eF2jAHp.png">
+              <v-img :aspect-ratio="16/9" src="https://i.imgur.com/BqEcjj4.png">
               <v-icon 
                 x-large
                 class= "pa-1"
@@ -162,21 +162,17 @@ export default {
     return {
       navdrawer: false,
       drawerItems: [
-        { title: '기능1(미구현)', icon: 'mdi-bridge', to: '/bridge'},
-        { title: '기능2(미구현)', icon: 'mdi-account-heart-outline', to: '/langOflove'},
-        { title: '기능3(미구현)', icon: 'mdi-folder-information-outline', to: '/info/ccc'},
-        { title: '기능4(미구현)', icon: 'mdi-sprout' , to: '/prayer/ajou'},
-        { title: '기능5(미구현)', icon: 'mdi-sprout-outline' , to: '/prayer/personal'},
+        { title: '내 식단 확인', icon: 'mdi-ticket-account', to: '/my-diet'},
+        { title: '식단 추천', icon: 'mdi-food', to: '/recomendation/weeks'},
+        { title: '메뉴 추천', icon: 'mdi-food-variant', to: '/recomendation/food'},
       ],
       drawerEtcItems: [
-        { title: '기능5(미구현)', icon: 'mdi-email-send-outline', to: '/request/delegation'},
-        { title: '기능5(미구현)', icon: 'mdi-email-send', to: '/request/steward'},
-        { title: 'About', icon: 'mdi-help-circle-outline', to: '/info/about'},
+        { title: '커뮤니티', icon: 'mdi-sprout' , to: '/prayer/ajou'},
       ],
       footerItems: [
         { icon: 'mdi-human-greeting', href: 'https://medium.com/@peterhyun1234'},
         { icon: 'mdi-github' , href: 'https://github.com/peterhyun1234/My_nutrition_mate'},
-        { icon: 'mdi-book-information-variant', href: 'https://ajouccc.netlify.com/about'},
+        { icon: 'mdi-book-information-variant', href: 'https://4hv.netlify.com/info/about'},
       ],
     }
   },
