@@ -84,14 +84,14 @@
                 <v-btn
                   text
                   color="green accent-4"
-                  to="/bridge/description"
+                  to="/recomeadation/food"
                 >
                   <strong>식단 추천 설명</strong>
                 </v-btn>
                 <v-btn
                   text
                   color="deep-purple accent-4"
-                  to="/bridge/play"
+                  to="/recomeadation/food"
                 >
                   <strong>식단 추천 시작</strong>
                 </v-btn>
@@ -135,7 +135,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
-                  to="/langOflove/test"
+                  to="/recomeadation/food"
                 >
                   <strong>메뉴 추천 시작</strong>
                 </v-btn>
@@ -198,7 +198,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
-                  to="/info/ccc"
+                  to="/info"
                 >
                   <strong>더 알아보기</strong>
                 </v-btn>
@@ -230,7 +230,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
-                  to="/prayer"
+                  to="/info"
                 >
                   <strong>더 알아보기</strong>
                 </v-btn>
@@ -264,7 +264,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
-                  to="/request"
+                  to="/info"
                 >
                   <strong>더 알아보기</strong>
                 </v-btn>
@@ -294,19 +294,19 @@ export default {
       ],
       bridgeItems: [
         {
-          src: 'https://i.imgur.com/V0Pggmc.png', //667 X 571 needed
+          src: 'https://i.imgur.com/FawvDBD.png', //667 X 571 needed
         },
         {
-          src: 'https://i.imgur.com/4pgyWuV.png',
+          src: 'https://i.imgur.com/PUFeE5L.png',
         },
         {
-          src: 'https://i.imgur.com/XjOcZDE.png',
+          src: 'https://i.imgur.com/iauD2So.png',
         },        
         {
-          src: 'https://i.imgur.com/O7qf6ZY.png',
+          src: 'https://i.imgur.com/VRPHngB.png',
         },
         {
-          src: 'https://i.imgur.com/slW2DVU.png',
+          src: 'https://i.imgur.com/AZkjnvf.png',
         },
       ],
       windowSize: {
