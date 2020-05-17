@@ -111,7 +111,7 @@
                   <p>평소에 제가 불편했던 부분들을 해소하고 싶다는 마음으로 개발하게 됐습니다.</p>
                   <p>
                     <span>개인적으로 공부하면서 만든 웹페이지라서 부족한 부분이 많이 있습니다. 개선해야 할 부분이나 추가적으로 필요한 기능이 있다면 </span>
-                    <a href="/about" style="text-decoration:none">
+                    <a href="/info/about" style="text-decoration:none">
                       <strong>
                         <span style="color: #919191;">개발자에게 건의사항</span>
                       </strong>
@@ -167,7 +167,7 @@ export default {
         { title: '메뉴 추천', icon: 'mdi-food-variant', to: '/recomendation/food'},
       ],
       drawerEtcItems: [
-        { title: '커뮤니티', icon: 'mdi-sprout' , to: '/prayer/ajou'},
+        { title: '커뮤니티', icon: 'mdi-sprout' , to: '/community'},
       ],
       footerItems: [
         { icon: 'mdi-human-greeting', href: 'https://medium.com/@peterhyun1234'},
