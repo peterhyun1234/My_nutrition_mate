@@ -7,7 +7,7 @@
         row 
         wrap
       >
-        <v-flex 
+        <!-- <v-flex 
           xs12 px-0 
           v-if="!windowSize.mobile">
           <v-img 
@@ -27,7 +27,7 @@
             max-height="700"
             contain
           ></v-img>
-        </v-flex>
+        </v-flex> -->
 
         <v-card
           class="pa-4 ma-3 text-left"
@@ -71,29 +71,29 @@
                     > mdi-bridge</v-icon>
                 </v-avatar>
                 <p class="headline text--primary mt-3">
-                  기능 1
+                  식단 추천
                 </p>
                 <p class="subheading text--primary mt-3">
-                  기능 1에 대한 설명
-                  기능 1에 대한 설명
-                  기능 1에 대한 설명
-                  기능 1에 대한 설명
-                  기능 1에 대한 설명
-                  기능 1에 대한 설명
+                  식단 추천에 대한 설명
+                  식단 추천에 대한 설명
+                  식단 추천에 대한 설명
+                  식단 추천에 대한 설명
+                  식단 추천에 대한 설명
+                  식단 추천에 대한 설명
                   </p>
                 <v-btn
                   text
                   color="green accent-4"
                   to="/bridge/description"
                 >
-                  <strong>기능 1 설명</strong>
+                  <strong>식단 추천 설명</strong>
                 </v-btn>
                 <v-btn
                   text
                   color="deep-purple accent-4"
                   to="/bridge/play"
                 >
-                  <strong>기능 1 시작</strong>
+                  <strong>식단 추천 시작</strong>
                 </v-btn>
               </v-card-text>
             </v-flex>
@@ -120,15 +120,15 @@
                     > mdi-account-heart-outline</v-icon>
                 </v-avatar>
                 <p class="headline text--primary mt-3">
-                  기능 2
+                  메뉴 추천
                 </p>
                 <p class="subheading text--primary ma-0 font-weight-bold">
-                기능 2에 대한 설명
-                기능 2에 대한 설명
-                기능 2에 대한 설명
-                기능 2에 대한 설명
-                기능 2에 대한 설명
-                기능 2에 대한 설명
+                메뉴 추천에 대한 설명
+                메뉴 추천에 대한 설명
+                메뉴 추천에 대한 설명
+                메뉴 추천에 대한 설명
+                메뉴 추천에 대한 설명
+                메뉴 추천에 대한 설명
                 </p>
                 <v-divider>
                 </v-divider>
@@ -137,7 +137,7 @@
                   color="deep-purple accent-4"
                   to="/langOflove/test"
                 >
-                  <strong>기능 2 시작</strong>
+                  <strong>메뉴 추천 시작</strong>
                 </v-btn>
               </v-card-text>
             </v-flex>
