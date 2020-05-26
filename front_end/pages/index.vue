@@ -84,14 +84,14 @@
                 <v-btn
                   text
                   color="green accent-4"
-                  to="/recomeadation/food"
+                  to="/recomendation"
                 >
                   <strong>식단 추천 설명</strong>
                 </v-btn>
                 <v-btn
                   text
                   color="deep-purple accent-4"
-                  to="/recomeadation/food"
+                  to="/recomendation/weeks"
                 >
                   <strong>식단 추천 시작</strong>
                 </v-btn>
@@ -135,7 +135,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
-                  to="/recomeadation/food"
+                  to="/recomendation/food"
                 >
                   <strong>메뉴 추천 시작</strong>
                 </v-btn>
