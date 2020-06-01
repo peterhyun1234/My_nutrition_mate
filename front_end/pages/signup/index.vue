@@ -13,8 +13,22 @@ export default {
   },
   data () {
     return {
+      email: "",
+      password: ""
     }
   },
+  methods: {
+    signUp(){
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+        function(user){
+          alert("회원가입 완료!");
+        },
+        function(err){
+          alert("회원가입 에러" + err.message);
+        }
+      );
+    }
+  }
 }
 </script>
 
