@@ -77,9 +77,12 @@
           <v-icon>mdi-heart</v-icon>
         </v-btn>
   
-        <v-btn icon to="/request">
-          <v-icon>mdi-email-send-outline</v-icon>
+        <!-- <v-btn v-if="$store.state.user" icon @click="signOut">
+          <v-icon>lock_open</v-icon>
         </v-btn>
+        <v-btn v-else icon to="/info/about">
+          <v-icon>lock_open</v-icon>
+        </v-btn> -->
       </v-app-bar>
       <div>
         <nuxt style="background-color: #f2f2f2;"/>
@@ -182,6 +185,16 @@ export default {
   mounted()
   {
     //console.log('mounted navdrawer: ' + this.navdrawer)
+  },
+  methods: {
+    // async signOut() {
+    //   try {
+    //     await this.$auth().signOut()
+    //     this.$router.push('/')
+    //   } catch (e) {
+    //     console.error(e.message)
+    //   }
+    // },
   }
 }
 </script>
