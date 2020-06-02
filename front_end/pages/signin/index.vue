@@ -104,6 +104,7 @@ export default {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
         function(user){
           alert("로그인 완료!");
+          this.$router.push("/")
         },
         function(err){
           alert("로그인 에러" + err.message);

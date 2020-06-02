@@ -177,11 +177,11 @@ export default {
     }
   },
   created(){
-    console.log('created navdrawer: ' + this.navdrawer)
+    //console.log('created navdrawer: ' + this.navdrawer)
   },
   mounted()
   {
-    console.log('mounted navdrawer: ' + this.navdrawer)
+    //console.log('mounted navdrawer: ' + this.navdrawer)
   }
 }
 </script>
