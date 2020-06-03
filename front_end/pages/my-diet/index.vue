@@ -2,7 +2,8 @@
   <v-app id="inspire">
     <v-container>
       <v-row>
-        <v-col>
+        <v-col
+          style="text-align: center;">
           <v-card
             class="mt-5 mb-10 pa-3"
             shaped
@@ -15,9 +16,17 @@
               contain
             ></v-img>
             <v-card-text>
-              <p class="display-1 text--primary">
+              <p class="ma-5 display-1 text--primary">
                 등록된 식단이 없습니다..
               </p>
+              <v-btn 
+                class="subtitle-1 font-weight-bold white--text" 
+                color="green"
+                to="/recomendation/weeks"
+                large >
+                <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
+                식단 추천 받기!
+              </v-btn>
             </v-card-text>
           </v-card>
           <v-card
