@@ -351,7 +351,7 @@
         //localStorage.setItem("result", JSON.stringify(this.result));
         // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
         this.$router.push('./weeks/1');
-        console.log("carculateResult");
+        //console.log("carculateResult");
       },
     },
   }
