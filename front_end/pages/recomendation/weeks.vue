@@ -129,9 +129,11 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col>
+        <v-col 
+          class="mb-5"
+          style="text-align: center;">
           <v-card
-            class="mt-5 mb-5 pa-3"
+            class="mt-5 mb-8 pa-3"
             shaped>
             <v-expansion-panels 
               class="mb-6"
@@ -176,6 +178,14 @@
               </v-expansion-panel>
             </v-expansion-panels>
           </v-card>
+          <v-btn 
+            class="subtitle-1 font-weight-bold white--text" 
+            color="green"
+            @click="showResult"
+            large >
+            <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
+            식단 추천 받기!
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -337,6 +347,7 @@
         //localStorage.setItem("result", JSON.stringify(this.result));
         // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
         //this.$router.push('./test/result');
+        console.log("carculateResult");
       },
     },
   }
