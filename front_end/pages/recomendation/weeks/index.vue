@@ -2,7 +2,7 @@
 
 <template>
   <v-app id="inspire">
-    <v-container class="grey lighten-5">
+    <v-container>
       <v-row>
         <v-col>
           <v-card
@@ -145,6 +145,7 @@
                 :key="i"
               >
                 <v-expansion-panel-header expand-icon="mdi-menu-down" disable-icon-rotate>
+                  질문 {{i+1}}. {{questions[i].contents}}
                   <template 
                     v-slot:actions
                     v-if="radios[i]"
@@ -201,20 +202,23 @@
       radios: [], 
       questions: [
         {
-          option1: "나는 나를 인정하는 내용의 문자나 카톡을 받는 것을 좋아한다.", 
-          option2: "나는 안기는 것이 좋다.", 
+          contents: "선호하는 식단을 선택해주세요.",
+          option1: "저염, 고단백, 저지방식 위주 식단 만들기", 
+          option2: "상관없음", 
           option1_prop: "A", 
           option2_prop: "E", 
         },   
         {
-          option1: "특별한 사람과 일대일로 시간을 보내는 게 좋다.", 
-          option2: "누군가 내게 도움을 줄 때 사랑 받는다고 느낀다.", 
+          contents: "선호하는 식단을 선택해주세요.",
+          option1: "지난 일주일동안 먹은 음식들을 추가로 입력해서 더 정교한 식단 추천을 받기 원한다.", 
+          option2: "회원가입시 입력한 정보만을 통해 추천 받기 원한다.", 
           option1_prop: "B", 
           option2_prop: "D", 
         },   
         {
-          option1: "사람들로부터 의미있는 선물을 받는 게 좋다.", 
-          option2: "친구들과 사랑하는 사람들을 만나 여유 있게 시간을 보내는 게 좋다.", 
+          contents: "선호하는 식단을 선택해주세요.",
+          option1: "다른 사람들의 다이어트 식단 참고해서 식단 만들기", 
+          option2: "다른 사람의 식단 참고 X", 
           option1_prop: "C", 
           option2_prop: "A", 
         },      
@@ -346,7 +350,7 @@
         // using localstorage
         //localStorage.setItem("result", JSON.stringify(this.result));
         // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
-        //this.$router.push('./test/result');
+        this.$router.push('./weeks/1');
         console.log("carculateResult");
       },
     },
