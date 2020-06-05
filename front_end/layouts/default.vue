@@ -76,6 +76,10 @@
         <v-btn icon to="/info/about">
           <v-icon>mdi-heart</v-icon>
         </v-btn>
+
+        <v-btn icon to="/signin">
+          <v-icon>mdi-login</v-icon>
+        </v-btn>
   
         <!-- <v-btn v-if="$store.state.user" icon @click="signOut">
           <v-icon>lock_open</v-icon>
