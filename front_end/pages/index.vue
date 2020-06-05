@@ -120,14 +120,12 @@
                 <p class="headline text--primary mt-3">
                   메뉴 추천
                 </p>
-                <p class="subheading text--primary ma-0 font-weight-bold">
-                메뉴 추천에 대한 설명
-                메뉴 추천에 대한 설명
-                메뉴 추천에 대한 설명
-                메뉴 추천에 대한 설명
-                메뉴 추천에 대한 설명
-                메뉴 추천에 대한 설명
-                </p>
+                <p class="subtitle-1 text--primary mt-3 ">
+                  자취생, 직장인들이 매일하는 고민중 하나가 
+                  <strong>'오늘 뭐먹지..?'</strong> 입니다. <strong>My nutrition mate의 메뉴 추천 기능</strong>을 통해서 선택지를 줄여보세요!</p>
+                <v-divider></v-divider>
+                <p class="subtitle-1 text--primary mt-3 ">
+                  건강관리까지 고려한 메뉴 추천은 <strong>건강관리까지</strong>이어질 수 있습니다.</p>
                 <v-divider>
                 </v-divider>
                 <v-btn
@@ -173,7 +171,7 @@
             align-center 
             justify-center
           >
-            <v-flex xs12 sm6 md4>
+            <v-flex xs12 sm12 md4>
               <v-card-text>
                 <v-avatar 
                   color="#FFE0B2" 
@@ -206,7 +204,7 @@
               <v-divider>
               </v-divider>
             </v-flex>
-            <v-flex xs12 sm6 md4>
+            <v-flex xs12 sm12 md4>
               <v-card-text>
                 <v-avatar 
                   color="#FFE0B2" 
@@ -233,7 +231,7 @@
               <v-divider>
               </v-divider>
             </v-flex>
-            <v-flex xs12 sm6 md4>
+            <v-flex xs12 sm12 md4>
               <v-card-text>
                 <v-avatar 
                   color="#FFE0B2" 
