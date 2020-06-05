@@ -2,10 +2,21 @@
   <v-app id="inspire">
     <v-container>
       <v-row>
-        <v-col>
+        <v-col style="text-align: center;">
           <v-card
-            class="mt-5 mb-10 pa-3"
+            class="mt-5 mb-5 pa-3"
           >
+          
+          <v-avatar 
+            color="#FFE0B2" 
+            size="70"
+            >
+            <v-icon 
+              color="#FFA726"
+              large
+              > mdi-ev-station</v-icon>
+          </v-avatar>
+          <p class="headline text--primary mt-5 mb-5">Create your account</p>
             <v-form
               ref="form"
               lazy-validation
@@ -44,26 +55,15 @@
                 required
               ></v-select> -->
 
-              <v-btn
-                color="warning"
-                @click="signUp"
-              >
-                가입하기
-              </v-btn>
             </v-form>
           </v-card>
-          
-          <v-card>
-            asdasd
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col 
-          class="my-2"
-          style="text-align: center;"
-        >
-        asdasd
+          <v-btn
+            color="warning"
+            large
+            @click="signUp"
+          >
+            가입하기
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -117,12 +117,12 @@ export default {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
         function(user){
           alert("회원가입 완료!");
-          this.$router.push("/")
         },
         function(err){
           alert("회원가입 에러" + err.message);
         }
       );
+      this.$router.push("./signin")
     }
   }
 }

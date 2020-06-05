@@ -2,14 +2,23 @@
   <v-app id="inspire">
     <v-container>
       <v-row>
-        <v-col>
+        <v-col style="text-align: center;">
+          <v-avatar 
+            color="#FFE0B2" 
+            size="70"
+            >
+            <v-icon 
+              color="#FFA726"
+              large
+              > mdi-ev-station</v-icon>
+          </v-avatar>
+          <p class="headline text--primary mt-5 mb-5">Sign in to My Nutrition Mate</p>
           <v-card
             class="mt-5 mb-10 pa-3"
           >
             <v-form
               ref="form"
               lazy-validation
-              style="text-align: center;"
             >
               <v-text-field
                 v-model="email"
@@ -98,15 +107,19 @@ export default {
   },
   methods: {
     signIn(){
+      let signInFlag = true;
+      
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
         function(user){
-          alert("로그인 완료!");
-          this.$router.push("/")
+          //alert("로그인 완료!");
         },
         function(err){
           alert("로그인 에러" + err.message);
+          // this.signInFlag = false
         }
       );
+      if(signInFlag)
+        this.$router.push('./');
     }
   }
 }
