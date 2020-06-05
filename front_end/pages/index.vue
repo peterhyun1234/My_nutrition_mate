@@ -68,19 +68,17 @@
                   >
                   <v-icon
                     color="#FFA726"
-                    > mdi-bridge</v-icon>
+                    > mdi-food</v-icon>
                 </v-avatar>
                 <p class="headline text--primary mt-3">
                   식단 추천
                 </p>
-                <p class="subheading text--primary mt-3">
-                  식단 추천에 대한 설명
-                  식단 추천에 대한 설명
-                  식단 추천에 대한 설명
-                  식단 추천에 대한 설명
-                  식단 추천에 대한 설명
-                  식단 추천에 대한 설명
-                  </p>
+                <p class="subtitle-1 text--primary mt-3 ">
+                  운동보다 힘든 것이 식습관 조절 일 수 있지만, 
+                  <strong>적절한 밸런스</strong>를 <strong>My nutrition mate의 식단 추천 기능</strong>을 통해서 건강관리를 쉽게 할 수 있습니다.</p>
+                <v-divider></v-divider>
+                <p class="subtitle-1 text--primary mt-3 ">
+                  식단 추천은 <strong>회원가입 시 기입한 건강상태</strong>를 기반으로 합니다.</p>
                 <v-btn
                   text
                   color="green accent-4"
@@ -117,7 +115,7 @@
                   >
                   <v-icon 
                     color="#FFA726"
-                    > mdi-account-heart-outline</v-icon>
+                    >mdi-food-variant</v-icon>
                 </v-avatar>
                 <p class="headline text--primary mt-3">
                   메뉴 추천
