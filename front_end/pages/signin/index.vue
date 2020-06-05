@@ -9,6 +9,7 @@
             <v-form
               ref="form"
               lazy-validation
+              style="text-align: center;"
             >
               <v-text-field
                 v-model="email"
@@ -39,23 +40,19 @@
               <v-btn
                 color="warning"
                 @click="signIn"
+                class="ma-4"
               >
                 로그인
               </v-btn>
+              <v-btn
+                color="success"
+                class="ma-4"
+                to="/signup"
+              >
+                회원가입
+              </v-btn>
             </v-form>
           </v-card>
-          
-          <v-card>
-            asdasd
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col 
-          class="my-2"
-          style="text-align: center;"
-        >
-        asdasd
         </v-col>
       </v-row>
     </v-container>

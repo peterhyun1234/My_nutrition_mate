@@ -183,18 +183,20 @@
                   >
                   <v-icon 
                     color="#FFA726"
-                    > mdi-folder-information-outline</v-icon>
+                    >mdi-sprout-outline</v-icon>
                 </v-avatar>
                 <p class="headline text--primary ma-5">
-                  기능 3
+                  커뮤니티
                 </p>
+                <p class="subheading text--primary ma-2">
+                  커뮤니티 가벼운 소통 도구로, 여러 사용자가 <strong>다양한 방법으로 소통</strong>할 수 있도록 해 줍니다. 
+                  다양한 콘텐츠 유형을 통해 <strong>서로 시너지를 발휘해서 건강관리</strong>를 재밌게 할 수 있습니다!
+                </p>
+                <v-divider></v-divider>
                 <p class="subheading text--primary ma-3">
-                  기능 3에 대한 설명
-                  기능 3에 대한 설명
-                  기능 3에 대한 설명
-                  기능 3에 대한 설명
-                  기능 3에 대한 설명
-                  기능 3에 대한 설명</p>
+                  나와 <strong>비슷한 사람의 식단</strong>을 찾아보고! 비교하고 싶다면?!
+                </p>
+                
                 <v-btn
                   text
                   color="deep-purple accent-4"
@@ -214,19 +216,14 @@
                   >
                   <v-icon 
                     color="#FFA726"
-                    >mdi-sprout-outline</v-icon>
+                    > mdi-folder-information-outline</v-icon>
                 </v-avatar>
                 <p class="headline text--primary ma-5">
-                  기능 4
+                  추가 기능 1
                 </p>
                 <p class="subheading text--primary ma-3">
-                  기능 4에 대한 설명기능 4에 대한 설명
-                  기능 4에 대한 설명
-                  기능 4에 대한 설명
-                  기능 4에 대한 설명
-                  기능 4에 대한 설명
-                  기능 4에 대한 설명
-                  기능 4에 대한 설명</p>
+                  아직 구현하지 않은 기능 1에 대한 설명입니다.
+                </p>
                 <v-btn
                   text
                   color="deep-purple accent-4"
@@ -249,17 +246,10 @@
                     >mdi-email-send-outline</v-icon>
                 </v-avatar>
                 <p class="headline text--primary ma-5">
-                  기능 5
+                  추가 기능 2
                 </p>
                 <p class="subheading text--primary ma-3">
-                  기능 5에 대한 설명
-                  기능 5에 대한 설명
-                  기능 5에 대한 설명
-                  기능 5에 대한 설명
-                  기능 5에 대한 설명
-                  기능 5에 대한 설명
-                  기능 5에 대한 설명
-                  기능 5에 대한 설명
+                  아직 구현하지 않은 기능 2에 대한 설명입니다.
                 </p>
                 <v-btn
                   text
