@@ -27,7 +27,43 @@
                   <p class="headline text--primary mt-3">
                     추천된 메뉴
                   </p>
-                  
+                  <v-img 
+                    src="https://i.imgur.com/L6R0QM4.png" 
+                    aspect-ratio="0.88"
+                    max-height="800"
+                    contain
+                  ></v-img>
+                  <v-divider class="mt-5"></v-divider>
+                  <v-card-title class="mb-5">
+                    닭 가슴살 야채 볶음밥
+                  </v-card-title>
+
+                  <v-card-subtitle >
+                    "담백한 닭가슴살을 넣은 고소한 야채볶음밥 "
+                  </v-card-subtitle>
+                  <v-divider class="mt-2"></v-divider>
+                  <v-card-title class="mb-5">
+                    재료 (1인분 기준)
+                  </v-card-title>
+
+                  <v-card-subtitle>
+                    -- 밥 한공기
+                  </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 당근 1/4개
+                  </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 피망 1/5개
+                  </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 양파 1/4개
+                  </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 닭가슴살 200g
+                  </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 통깨, 포도씨유, 소금
+                  </v-card-subtitle>
                 </v-card-text>
               </v-flex>
             </v-layout>
