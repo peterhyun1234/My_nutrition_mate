@@ -9,9 +9,9 @@
             class="mt-5 mb-5 pa-3"
             shaped
             >
-            <v-layout 
+            <v-layout
               row
-              align-center 
+              align-center
               justify-center
             >
               <v-flex xs12 sm6 md6>
