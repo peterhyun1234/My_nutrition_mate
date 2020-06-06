@@ -277,7 +277,7 @@ export default {
           color: 'blue',
         },
         {
-          text: '갑각류',
+          text: '오이',
           color: 'red',
         },
       ],
@@ -285,8 +285,8 @@ export default {
       menu: false,
       model: [
         {
-          text: '새우',
-          color: 'blue',
+          text: '오이',
+          color: 'red',
         },
       ],
       x: 0,

@@ -256,8 +256,8 @@ export default {
       this.seriesData[1].r = "125";
     },
     showDiets(){
-      //diets = true;
-      //localStorage.setItem("diets", JSON.stringify(diets));
+      let diets = "temp";
+      localStorage.setItem("diets", JSON.stringify(diets));
       this.$router.push('../../my-diet');
     },
   }

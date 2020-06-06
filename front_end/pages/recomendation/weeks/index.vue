@@ -217,7 +217,7 @@
         },   
         {
           contents: "선호하는 식단을 선택해주세요.",
-          option1: "다른 사람들의 다이어트 식단 참고해서 식단 만들기", 
+          option1: "다른 사람들의 식단 참고해서 식단 구성", 
           option2: "다른 사람의 식단 참고 X", 
           option1_prop: "C", 
           option2_prop: "A", 
@@ -237,7 +237,7 @@
           color: 'blue',
         },
         {
-          text: '갑각류',
+          text: '오이',
           color: 'red',
         },
       ],
@@ -245,8 +245,8 @@
       menu: false,
       model: [
         {
-          text: '새우',
-          color: 'blue',
+          text: '오이',
+          color: 'red',
         },
       ],
       x: 0,

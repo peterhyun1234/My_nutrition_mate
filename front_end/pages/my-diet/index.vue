@@ -1,13 +1,13 @@
 <template>
   <v-app id="inspire">
     <v-container>
-      <v-row>
+      <v-row 
+        v-if="!diet">
         <v-col
           style="text-align: center;">
           <v-card
             class="mt-5 mb-10 pa-3"
             shaped
-            v-if="!diet"
           >
             <v-img 
               src="https://i.imgur.com/zo9v8uL.png"
@@ -28,23 +28,12 @@
               </v-btn>
             </v-card-text>
           </v-card>
-          <v-card
-            class="mt-5 mb-10 pa-3"
-            shaped
-            v-else
-          >
-            <v-img 
-              src="https://i.imgur.com/zo9v8uL.png"
-              aspect-ratio="1.77"
-              max-height="700"
-              contain
-            ></v-img>
-          </v-card>
         </v-col>
       </v-row>
 
       <v-row
         no-gutters
+        v-else
       >
         <v-col
           style="text-align: center;"
@@ -151,6 +140,13 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    const recievedDiet = localStorage.getItem("diets");
+    const parsedDiet = JSON.parse(recievedDiet);
+
+    this.diet = parsedDiet
+
   },
 }
 </script>

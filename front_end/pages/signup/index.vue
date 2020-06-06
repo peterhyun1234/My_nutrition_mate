@@ -277,7 +277,7 @@ export default {
           color: 'blue',
         },
         {
-          text: '갑각류',
+          text: '오이',
           color: 'red',
         },
       ],

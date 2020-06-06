@@ -147,7 +147,7 @@
                   <strong>'오늘 뭐먹지..?'</strong> 입니다. <strong>My nutrition mate의 메뉴 추천 기능</strong>을 통해서 선택지를 줄여보세요!</p>
                 <v-divider></v-divider>
                 <p class="subtitle-1 text--primary mt-3 ">
-                  건강관리까지 고려한 메뉴 추천은 <strong>건강관리까지</strong>이어질 수 있습니다.</p>
+                  건강관리까지 고려한 메뉴 추천은 <strong>건강관리까지</strong> 이어질 수 있습니다.</p>
                 <v-divider>
                 </v-divider>
                 <v-btn
