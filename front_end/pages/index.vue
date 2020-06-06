@@ -53,7 +53,7 @@
                   height="245"
                 >
                 <v-carousel-item
-                  v-for="(item,i) in bridgeItems"
+                  v-for="(item,i) in weekItems"
                   :key="i"
                   :src="item.src"
                 ></v-carousel-item>
@@ -108,6 +108,28 @@
             justify-right
           >
             <v-flex xs12 sm6 md6>
+              <v-card
+                elevation="10"
+                max-width="300"
+                class="mx-auto"
+              >
+                <v-carousel
+                  :continuous="true"
+                  :cycle="true"
+                  :show-arrows-on-hover="true"
+                  hide-delimiter-background
+                  delimiter-icon="mdi-minus"
+                  height="245"
+                >
+                <v-carousel-item
+                  v-for="(item,i) in foodItems"
+                  :key="i"
+                  :src="item.src"
+                ></v-carousel-item>
+                </v-carousel>
+              </v-card>
+            </v-flex>
+            <v-flex xs12 sm6 md6>
               <v-card-text>
                 <v-avatar 
                   color="#FFE0B2" 
@@ -136,28 +158,6 @@
                   <strong>메뉴 추천 시작</strong>
                 </v-btn>
               </v-card-text>
-            </v-flex>
-            <v-flex xs12 sm6 md6>
-              <v-card
-                elevation="10"
-                max-width="300"
-                class="mx-auto"
-              >
-                <v-carousel
-                  :continuous="true"
-                  :cycle="true"
-                  :show-arrows-on-hover="true"
-                  hide-delimiter-background
-                  delimiter-icon="mdi-minus"
-                  height="245"
-                >
-                <v-carousel-item
-                  v-for="(item,i) in bridgeItems"
-                  :key="i"
-                  :src="item.src"
-                ></v-carousel-item>
-                </v-carousel>
-              </v-card>
             </v-flex>
           </v-layout>
         </v-card>
@@ -278,21 +278,33 @@ export default {
         'red lighten-2',
         'orange darken-1',
       ],
-      bridgeItems: [
+      weekItems: [
         {
-          src: 'https://i.imgur.com/FawvDBD.png', //667 X 571 needed
+          src: 'https://i.imgur.com/N39qoM1.png', //667 X 571 needed
         },
         {
-          src: 'https://i.imgur.com/PUFeE5L.png',
+          src: 'https://i.imgur.com/yCLRxnD.png',
         },
         {
-          src: 'https://i.imgur.com/iauD2So.png',
+          src: 'https://i.imgur.com/3olvb9s.png',
         },        
         {
-          src: 'https://i.imgur.com/VRPHngB.png',
+          src: 'https://i.imgur.com/CWTLjNg.png',
+        },
+      ],
+
+      foodItems: [
+        {
+          src: 'https://i.imgur.com/SrFzc6X.png', //667 X 571 needed
         },
         {
-          src: 'https://i.imgur.com/AZkjnvf.png',
+          src: 'https://i.imgur.com/YYGcA36.png',
+        },
+        {
+          src: 'https://i.imgur.com/jjaEG6s.png',
+        },        
+        {
+          src: 'https://i.imgur.com/8Q7u88Z.png',
         },
       ],
       windowSize: {
