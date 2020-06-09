@@ -61,7 +61,19 @@ export default {
   },
   data () {
     return {
+      email: "",
     }
+  },
+  mounted() {
+    const recievedID = localStorage.getItem("ID");
+    const parsedID = JSON.parse(recievedID);
+
+    this.email = parsedID
+
+    if(parsedID == null){
+      this.$router.push('../signin')
+    }
+
   },
 }
 </script>

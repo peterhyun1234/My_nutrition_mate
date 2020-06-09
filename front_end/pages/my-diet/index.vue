@@ -76,6 +76,7 @@ export default {
   },
   data () {
     return {
+      email: "",
       diet: "",
       tempDiet: "",
       headers: [
@@ -146,6 +147,15 @@ export default {
     const parsedDiet = JSON.parse(recievedDiet);
 
     this.diet = parsedDiet
+
+    const recievedID = localStorage.getItem("ID");
+    const parsedID = JSON.parse(recievedID);
+
+    this.email = parsedID
+
+    if(parsedID == null){
+      this.$router.push('./signin')
+    }
 
   },
 }
