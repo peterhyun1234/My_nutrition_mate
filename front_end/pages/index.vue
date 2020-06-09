@@ -82,7 +82,7 @@
                 <v-btn
                   text
                   color="green accent-4"
-                  to="/recomendation"
+                  to="/recomendation/weeks"
                 >
                   <strong>식단 추천 설명</strong>
                 </v-btn>
