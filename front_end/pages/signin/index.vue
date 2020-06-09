@@ -114,12 +114,16 @@ export default {
           //alert("로그인 완료!");
         },
         function(err){
+          signInFlag = false
           alert("로그인 에러" + err.message);
-          // this.signInFlag = false
         }
       );
-      if(signInFlag)
-        this.$router.push('./');
+
+      if(signInFlag){
+        let inID = this.email
+        localStorage.setItem("ID", JSON.stringify(inID));
+        this.$router.push('./')
+      }
     }
   }
 }
