@@ -25,7 +25,7 @@
         <v-btn
           text
           color="deep-purple accent-4"
-          to="/info"
+          to="/community"
         >
           <strong>더 알아보기</strong>
         </v-btn>
