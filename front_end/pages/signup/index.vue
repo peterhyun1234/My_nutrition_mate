@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-container>
-      <v-row >
+      <v-row>
         <v-col style="text-align: center;">
           <v-card
             class="mt-5 mb-5 pa-3"
@@ -25,7 +25,7 @@
                 v-model="name"
                 :counter="10"
                 :rules="nameRules"
-                label="Name"
+                label="이름"
                 required
               ></v-text-field>
 
@@ -46,15 +46,44 @@
                 counter
                 @click:append="show1 = !show1"
               ></v-text-field>
-<!-- 
-              <v-select
-                v-model="select"
-                :items="items"
-                :rules="[v => !!v || 'Item is required']"
-                label="Item"
-                required
-              ></v-select> -->
+              <v-row>
+                <v-col cols="4">
+                  <v-subheader>나이</v-subheader>
+                </v-col>
+                <v-col cols="8">
+                  <v-text-field
+                    label="Age"
+                    value="0"
+                    suffix="세"
+                  ></v-text-field>
+                </v-col>
+              </v-row>
 
+              <v-row>
+                <v-col cols="4">
+                  <v-subheader>몸무게</v-subheader>
+                </v-col>
+                <v-col cols="8">
+                  <v-text-field
+                    label="Weight"
+                    value="00.00"
+                    suffix="kg"
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+
+              <v-row>
+                <v-col cols="4">
+                  <v-subheader>키</v-subheader>
+                </v-col>
+                <v-col cols="8">
+                  <v-text-field
+                    label="Height"
+                    value="0"
+                    suffix="cm"
+                  ></v-text-field>
+                </v-col>
+              </v-row>
             </v-form>
           </v-card>
           <v-card
@@ -112,7 +141,7 @@
               </v-layout>
           </v-card>
           <v-card
-            class="mt-5 mb-5 pa-3"
+            class="mt-5 mb-5 pa-3 flex-center"
           >
             <v-card-subtitle>
               평소 어지러움과 피로를 어느정도로 느끼시나요?
@@ -126,10 +155,10 @@
             </v-radio-group>
           </v-card>
           <v-card
-            class="mt-5 mb-5 pa-3"
+            class="mt-5 mb-5 pa-3 flex-center"
           >
             <v-card-subtitle>
-              질병때문에 약을 복용하고 있습니까?
+              다리에 쥐가 자주 나시나요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[1]" :mandatory="false" row>
               <v-radio label="전혀" value="radio-1"></v-radio>
@@ -140,10 +169,10 @@
             </v-radio-group>
           </v-card>
           <v-card
-            class="mt-5 mb-5 pa-3"
+            class="mt-5 mb-5 pa-3 flex-center"
           >
             <v-card-subtitle>
-              당뇨, 고혈압 등의 질병으로 식사를 조절하고 있습니까?
+              호흡 곤란 증세를 겪은 적이 있으신가요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[2]" :mandatory="false" row>
               <v-radio label="전혀" value="radio-1"></v-radio>
@@ -154,10 +183,10 @@
             </v-radio-group>
           </v-card>
           <v-card
-            class="mt-5 mb-5 pa-3"
+            class="mt-5 mb-5 pa-3 flex-center"
           >
             <v-card-subtitle>
-              치아나 입 안의 상태가 좋지 않아서 음식을 먹기 힘드십니까?
+              차나 커피를 평소에 얼마나 마시나요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[3]" :mandatory="false" row>
               <v-radio label="전혀" value="radio-1"></v-radio>
@@ -168,13 +197,26 @@
             </v-radio-group>
           </v-card>
           <v-card
-            class="mt-5 mb-5 pa-3"
+            class="mt-5 mb-5 pa-3 flex-center"
+          >
+            <v-card-subtitle>
+              혈압 수치가 어느정도인지 아시나요?
+            </v-card-subtitle>
+            <v-radio-group v-model="Qradios[4]" :mandatory="false" row>
+              <v-radio label="모름" value="radio-1"></v-radio>
+              <v-radio label="낮음" value="radio-2"></v-radio>
+              <v-radio label="보통" value="radio-3"></v-radio>
+              <v-radio label="높음" value="radio-4"></v-radio>
+            </v-radio-group>
+          </v-card>
+          <v-card
+            class="mt-5 mb-5 pa-3 flex-center"
           >
             <v-card-subtitle>
               변비가 있거나 설사를 자주 하십니까?
             </v-card-subtitle>
             
-            <v-radio-group v-model="Qradios[4]" :mandatory="false" row>
+            <v-radio-group v-model="Qradios[5]" :mandatory="false" row>
               <v-radio label="전혀" value="radio-1"></v-radio>
               <v-radio label="조금" value="radio-2"></v-radio>
               <v-radio label="보통" value="radio-3"></v-radio>
@@ -253,7 +295,7 @@ export default {
       ],
 
 
-      Qradios: ['radio-3', 'radio-3', 'radio-3', 'radio-3', 'radio-3',],
+      Qradios: ['radio-3', 'radio-3', 'radio-3', 'radio-3', 'radio-3', 'radio-3',],
 
       name: '',
       nameRules: [
@@ -295,3 +337,10 @@ export default {
 }
 </script>
 
+<style>
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
