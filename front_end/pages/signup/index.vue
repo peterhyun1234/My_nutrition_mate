@@ -53,7 +53,7 @@
                 <v-col cols="8">
                   <v-text-field
                     label="Age"
-                    value="0"
+                    v-model="age"
                     suffix="세"
                   ></v-text-field>
                 </v-col>
@@ -66,7 +66,7 @@
                 <v-col cols="8">
                   <v-text-field
                     label="Weight"
-                    value="00.00"
+                    v-model="weight"
                     suffix="kg"
                   ></v-text-field>
                 </v-col>
@@ -79,7 +79,7 @@
                 <v-col cols="8">
                   <v-text-field
                     label="Height"
-                    value="0"
+                    v-model="height"
                     suffix="cm"
                   ></v-text-field>
                 </v-col>
@@ -313,6 +313,10 @@ export default {
         required: value => !!value || 'Required.',
         min: v => v.length >= 8 || 'Min 8 characters',
       },
+
+      age: 0,
+      height: 0,
+      weight: 0
     }
   },
 
@@ -322,15 +326,37 @@ export default {
   },
   
   methods: {
+    questionCompleted(){
+
+      //console.log(this.age)
+      //console.log(this.height)
+      //console.log(this.weight)
+      //console.log(this.selected)
+      console.log(this.Qradios)
+
+      
+      // if(){
+
+      // }
+
+      return false
+    },
     signUp(){
-      firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-        function(user){
-          alert("회원가입 완료!");
-        },
-        function(err){
-          alert("회원가입 에러" + err.message);
-        }
-      );
+
+      if(this.questionCompleted()){
+
+      }
+      else{
+        firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+          function(user){
+            alert("회원가입 완료!");
+          },
+          function(err){
+            alert("회원가입 에러" + err.message);
+          }
+        );
+      }
+
       this.$router.push("./signin")
     }
   }
