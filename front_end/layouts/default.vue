@@ -77,10 +77,40 @@
           <v-icon>mdi-heart</v-icon>
         </v-btn>
 
-        <v-btn icon to="/signin">
+        <v-btn 
+          v-if="!email"
+          icon 
+          to="/signin">
           <v-icon>mdi-login</v-icon>
         </v-btn>
-  
+        <v-menu
+          v-else
+          left
+          bottom
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              icon
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon>mdi-dots-vertical</v-icon>
+            </v-btn>
+          </template>
+
+          <v-list>
+            <v-list-item>
+              <v-list-item-title>사용자 정보</v-list-item-title>
+            </v-list-item>
+            <v-divider></v-divider>
+            <v-list-item>
+              <v-list-item-title>dd</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>dd</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
         <!-- <v-btn v-if="$store.state.user" icon @click="signOut">
           <v-icon>lock_open</v-icon>
         </v-btn>
@@ -180,6 +210,7 @@ export default {
         { icon: 'mdi-github' , href: 'https://github.com/peterhyun1234/My_nutrition_mate'},
         { icon: 'mdi-book-information-variant', href: 'https://4hv.netlify.com/info/about'},
       ],
+      email: "",
     }
   },
   created(){
@@ -187,7 +218,10 @@ export default {
   },
   mounted()
   {
-    //console.log('mounted navdrawer: ' + this.navdrawer)
+    const recievedID = localStorage.getItem("ID");
+    const parsedID = JSON.parse(recievedID);
+
+    this.email = parsedID
   },
   methods: {
     // async signOut() {
