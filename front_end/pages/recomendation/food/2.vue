@@ -84,6 +84,10 @@ export default {
     return {
     }
   },
+
+  mounted() {
+    //bring the img text 
+  },
 }
 </script>
 
