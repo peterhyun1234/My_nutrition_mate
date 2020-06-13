@@ -332,7 +332,7 @@ export default {
       //console.log(this.height)
       //console.log(this.weight)
       //console.log(this.selected)
-      console.log(this.Qradios)
+      //console.log(this.Qradios)
 
       
       // if(){
