@@ -50,81 +50,26 @@
             class="mt-5 mb-5 pa-3"
             shaped>
             <v-card-title>
-              추가할 알러지 정보를 기입해주세요.
-            </v-card-title>
-            <v-combobox
-              v-model="model"
-              :filter="filter"
-              :hide-no-data="!search"
-              :items="items"
-              :search-input.sync="search"
-              hide-selected
-              label="Search for an option"
-              multiple
-              small-chips
-              solo
-            >
-              <template v-slot:no-data>
-                <v-list-item>
-                  <span class="subheading">Create</span>
-                  <v-chip
-                    :color="`${colors[nonce - 1]} lighten-3`"
-                    label
-                    small
-                  >
-                    {{ search }}
-                  </v-chip>
-                </v-list-item>
-              </template>
-              <template v-slot:selection="{ attrs, item, parent, selected }">
-                <v-chip
-                  v-if="item === Object(item)"
-                  v-bind="attrs"
-                  :color="`${item.color} lighten-3`"
-                  :input-value="selected"
-                  label
-                  small
-                >
-                  <span class="pr-2">
-                    {{ item.text }}
-                  </span>
-                  <v-icon
-                    small
-                    @click="parent.selectItem(item)"
-                  >mdi-close</v-icon>
-                </v-chip>
-              </template>
-              <template v-slot:item="{ index, item }">
-                <v-text-field
-                  v-if="editing === item"
-                  v-model="editing.text"
-                  autofocus
-                  flat
-                  background-color="transparent"
-                  hide-details
-                  solo
-                  @keyup.enter="edit(index, item)"
-                ></v-text-field>
-                <v-chip
-                  v-else
-                  :color="`${item.color} lighten-3`"
-                  dark
-                  label
-                  small
-                >
-                  {{ item.text }}
-                </v-chip>
+            알러지 검색
                 <v-spacer></v-spacer>
-                <v-list-item-action @click.stop>
-                  <v-btn
-                    icon
-                    @click.stop.prevent="edit(index, item)"
-                  >
-                    <v-icon>{{ editing !== item ? 'mdi-pencil' : 'mdi-check' }}</v-icon>
-                  </v-btn>
-                </v-list-item-action>
-              </template>
-            </v-combobox>
+                <v-text-field
+                    v-model="search"
+                    append-icon="mdi-magnify"
+                    label="Search"
+                    single-line
+                    hide-details
+                ></v-text-field>
+            </v-card-title>
+            <v-data-table
+                v-model="selected"
+                :headers="headers"
+                :items="desserts"
+                show-select
+                :single-select="singleSelect"
+                item-key="name"
+                :search="search"
+            >  
+            </v-data-table>
           </v-card>
         </v-col>
       </v-row>
@@ -141,7 +86,7 @@
               multiple
             >
               <v-expansion-panel
-                v-for="(item,i) in 3"
+                v-for="(item,i) in 1"
                 :key="i"
               >
                 <v-expansion-panel-header expand-icon="mdi-menu-down" disable-icon-rotate>
@@ -163,18 +108,36 @@
                 <v-divider></v-divider>
                 <v-expansion-panel-content
                   class= "mt-5">
-                  <v-radio-group v-model="radios[i]">
-                    <v-radio value="opt1">
-                      <template v-slot:label>
-                        <div>{{questions[i].option1}}</div>
-                      </template>
-                    </v-radio>
-                    <v-radio value="opt2">
-                      <template v-slot:label>
-                        <div>{{questions[i].option2}}</div>
-                      </template>
-                    </v-radio>
-                  </v-radio-group>
+                  <v-col cols="12" sm="4" md="4">
+                    <v-checkbox
+                      v-model="checkBoxes[0]"
+                      label="저염식"
+                      color="success"
+                      value="1"
+                      hide-details
+                    ></v-checkbox>
+                    <v-checkbox
+                      v-model="checkBoxes[1]"
+                      label="고단백식"
+                      color="info"
+                      value="2"
+                      hide-details
+                    ></v-checkbox>
+                    <v-checkbox
+                      v-model="checkBoxes[2]"
+                      label="저지방식"
+                      color="warning"
+                      value="3"
+                      hide-details
+                    ></v-checkbox>
+                    <v-checkbox
+                      v-model="checkBoxes[3]"
+                      label="상관없음"
+                      color="error"
+                      value="doncare"
+                      hide-details
+                    ></v-checkbox>
+                  </v-col>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -197,83 +160,62 @@
 <script>
   export default {
     data: () => ({
+
+      search: '',
+      singleSelect: false,
+      selected: [],
+      headers: [
+        {
+          text: '음식 종류',
+          align: 'start',
+          sortable: false,
+          value: 'name',
+        },
+      ],
+      desserts: [
+        { name: '난류(가금류)',},
+        { name: '우유',},
+        { name: '메밀',},
+        { name: '땅콩',},
+        { name: '대두',},
+        { name: '밀',},
+        { name: '고등어',},
+        { name: '게',},
+        { name: '새우',},
+        { name: '돼지고기',},
+        { name: '복숭아',},
+        { name: '토마토',},
+        { name: '아황산류',},
+        { name: '호두',},
+        { name: '닭고기',},
+        { name: '쇠고기',},
+        { name: '오징어',},
+        { name: '조개류(굴, 전복 홍합 포함)',},
+      ],
+
+
       email: "",
-      refreshDialog: false,
+
       panel: [],
-      radios: [], 
+      radios: ["done"], 
+      checkBoxes: [],
       questions: [
         {
-          contents: "선호하는 식단을 선택해주세요.",
-          option1: "저염, 고단백, 저지방식 위주 식단 만들기", 
-          option2: "상관없음", 
-          option1_prop: "A", 
-          option2_prop: "E", 
-        },   
-        {
-          contents: "선호하는 식단을 선택해주세요.",
-          option1: "지난 일주일동안 먹은 음식들을 추가로 입력해서 더 정교한 식단 추천을 받기 원한다.", 
-          option2: "회원가입시 입력한 정보만을 통해 추천 받기 원한다.", 
-          option1_prop: "B", 
-          option2_prop: "D", 
-        },   
-        {
-          contents: "선호하는 식단을 선택해주세요.",
-          option1: "다른 사람들의 식단 참고해서 식단 구성", 
-          option2: "다른 사람의 식단 참고 X", 
-          option1_prop: "C", 
-          option2_prop: "A", 
+          contents: "선호하는 식사을 선택(중복 선택 가능)"
         },      
       ],
 
 
-      activator: null,
-      attach: null,
-      colors: ['green', 'purple', 'indigo', 'cyan', 'teal', 'orange'],
-      editing: null,
-      index: -1,
-      items: [
-        { header: '알러지에 대한 정보를 입력함으로써 추가하실 수 있습니다.' },
-        {
-          text: '새우',
-          color: 'blue',
-        },
-        {
-          text: '오이',
-          color: 'red',
-        },
-      ],
-      nonce: 1,
-      menu: false,
-      model: [
-        {
-          text: '오이',
-          color: 'red',
-        },
-      ],
-      x: 0,
-      search: null,
-      y: 0,
     }),
 
-    watch: {
-      model (val, prev) {
-        if (val.length === prev.length) return
+    updated() {
+      //console.log(this.selected);
+      //console.log(this.checkBoxes);
 
-        this.model = val.map(v => {
-          if (typeof v === 'string') {
-            v = {
-              text: v,
-              color: this.colors[this.nonce - 1],
-            }
-
-            this.items.push(v)
-
-            this.nonce++
-          }
-
-          return v
-        })
-      },
+      if(this.checkBoxes[3] == "doncare"){
+        console.log(this.checkBoxes);
+        this.checkBoxes = ["", "", "", "clean"]
+      }
     },
 
     mounted() {
@@ -287,40 +229,23 @@
       if(parsedID == null){
         this.$router.push('../signin')
       }
+      //알러지 정보 받아오기!!
+      //example
+      const allergy = [
+        {name: "고등어"},
+        {name: "땅콩"},
+      ]
+      for(let i = 0; i < allergy.length; i++)
+        this.selected.push(allergy[i]) 
 
     },
 
     methods: {
-      edit (index, item) {
-        if (!this.editing) {
-          this.editing = item
-          this.index = index
-        } else {
-          this.editing = null
-          this.index = -1
-        }
-      },
-      filter (item, queryText, itemText) {
-        if (item.header) return false
-
-        const hasValue = val => val != null ? val : ''
-
-        const text = hasValue(itemText)
-        const query = hasValue(queryText)
-
-        return text.toString()
-          .toLowerCase()
-          .indexOf(query.toString().toLowerCase()) > -1
-      },
       init () {
-        for(let i = 0; i < 3; i++){
-          this.panel.push(i);
-        }
+        
+        this.panel.push(0);
         
         //console.log(this.panel);
-      },
-      refresh(){
-        this.radios = [];
       },
       showResult(){
         // 하나라도 check 안한 항목이 있는지
@@ -361,7 +286,7 @@
         // using localstorage
         //localStorage.setItem("result", JSON.stringify(this.result));
         // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
-        this.$router.push('./weeks/1');
+        this.$router.push('../my-diet');
         //console.log("carculateResult");
       },
     },
