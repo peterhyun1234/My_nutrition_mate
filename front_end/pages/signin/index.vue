@@ -1,6 +1,8 @@
 <template>
   <v-app id="inspire">
-    <v-container>
+    <v-container
+      v-on:keyup.enter="signIn"
+      >
       <v-row>
         <v-col style="text-align: center;">
           <v-avatar 
