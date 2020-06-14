@@ -77,14 +77,7 @@
           <v-icon>mdi-heart</v-icon>
         </v-btn>
 
-        <v-btn 
-          v-if="!email"
-          icon 
-          to="/signin">
-          <v-icon>mdi-login</v-icon>
-        </v-btn>
         <v-menu
-          v-else
           left
           bottom
         >
@@ -92,6 +85,7 @@
             <v-btn
               icon
               v-bind="attrs"
+              @click="isUpdated = !isUpdated"
               v-on="on"
             >
               <v-icon>mdi-dots-vertical</v-icon>
@@ -104,10 +98,22 @@
             </v-list-item>
             <v-divider></v-divider>
             <v-list-item>
-              <v-list-item-title>dd</v-list-item-title>
+              <v-list-item-title>내 식단 확인</v-list-item-title>
             </v-list-item>
-            <v-list-item>
-              <v-list-item-title>dd</v-list-item-title>
+            <v-list-item v-if="!email">
+              <v-btn 
+                icon 
+                to="/signin">
+                <v-icon>mdi-login</v-icon>
+              </v-btn>
+              <v-btn  
+                text 
+                to="/signin">
+                <v-list-item-title>로그인</v-list-item-title>
+              </v-btn>
+            </v-list-item>
+            <v-list-item v-else>
+              <v-list-item-title>로그아웃</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -197,6 +203,7 @@ export default {
   data () {
     return {
       navdrawer: false,
+      isUpdated: false,
       drawerItems: [
         { title: '내 식단 확인', icon: 'mdi-ticket-account', to: '/my-diet'},
         { title: '식단 추천', icon: 'mdi-food', to: '/recomendation/weeks'},
@@ -213,15 +220,22 @@ export default {
       email: "",
     }
   },
+  updated() {
+    console.log("updated")
+    const recievedID = localStorage.getItem("ID");
+    const parsedID = JSON.parse(recievedID);
+    this.email = parsedID
+  },
   created(){
+    //console.log("created")
     //console.log('created navdrawer: ' + this.navdrawer)
   },
   mounted()
   {
-    const recievedID = localStorage.getItem("ID");
-    const parsedID = JSON.parse(recievedID);
-
-    this.email = parsedID
+    //console.log("mounted")
+  },
+  destroyed(){
+    console.log("destroyed")
   },
   methods: {
     // async signOut() {
@@ -232,6 +246,16 @@ export default {
     //     console.error(e.message)
     //   }
     // },
+    callUpdate(){
+      console.log("callUpdate")
+      
+      if(this.isUpdated == false){
+        this.isUpdated = true;
+      }
+      else{
+        this.isUpdated = false;
+      }
+    }
   }
 }
 </script>
