@@ -1,5 +1,29 @@
 <template>
   <v-app id="inspire">
+      <v-tabs
+        v-model="tab"
+        background-color="amber darken-1"
+        dark
+        fixed-tabs
+      >
+        <v-tab
+          v-for="item in items"
+          :key="item.tab"
+        >
+          {{ item.tab }}
+        </v-tab>
+      </v-tabs>
+
+      <v-tabs-items v-model="tab">
+        <v-tab-item
+          v-for="item in items"
+          :key="item.tab"
+        >
+          <v-card flat>
+            <v-card-text>{{ item.content }}</v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs-items>
     <v-container>
       <v-row 
         v-if="!diet">
@@ -76,6 +100,14 @@ export default {
   },
   data () {
     return {
+
+      tab: null,
+      items: [
+        { tab: '확인 및 체크', content: 'Tab 1 Content' },
+        { tab: '분석', content: 'Tab 2 Content' },
+      ],
+
+
       email: "",
       diet: "",
       tempDiet: "",
