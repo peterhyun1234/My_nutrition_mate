@@ -77,7 +77,6 @@
                   >
                     <v-card
                       :color="active ? 'primary' : 'white'"
-                      class="ma-1"
                       elevation="1"
                       width="150"
                       @click="toggle"
