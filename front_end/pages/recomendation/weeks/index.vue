@@ -226,7 +226,7 @@
 
       this.email = parsedID
 
-      if(parsedID == null){
+      if(parsedID == "" || parsedID == null ){
         this.$router.push('../signin')
       }
       //알러지 정보 받아오기!!

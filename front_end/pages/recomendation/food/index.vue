@@ -70,7 +70,7 @@ export default {
 
     this.email = parsedID
 
-    if(parsedID == null){
+    if(parsedID == "" || parsedID == null){
       this.$router.push('../signin')
     }
 
