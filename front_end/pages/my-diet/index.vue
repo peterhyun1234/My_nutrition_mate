@@ -78,7 +78,6 @@
                     <v-card
                       :color="active ? 'primary' : 'white'"
                       class="ma-1"
-                      height="600"
                       elevation="1"
                       width="150"
                       @click="toggle"
@@ -88,36 +87,43 @@
                         align="center"
                         justify="center"
                       >
-                    <v-card-text>
-                  <v-avatar 
-                    color="#FFE0B2" 
-                    size="50"
-                    >
-                    <v-icon 
-                      color="#FFA726"
-                      > mdi-food</v-icon>
-                  </v-avatar>
-                  <p class="headline text--primary mt-3">
-                    식단 재추천
-                  </p>
-                  <p class="subtitle-1 text--primary ma-0 ">
-                    건강관리의 가장 중요한 부분은 무리한 운동이 아닌  
-                    <strong>'식단관리'</strong>라고 합니다.</p>
-                  <p class="subtitle-1 text--primary mt-3 ">
-                    그리고 식단관리는 일주일으로 끝나는 것이 아니라
-                    <strong> 꾸준한 관리</strong>를 했을 때 효과를 볼 수 있기 때문에 지속적으로 식단을 관리해야 합니다!</p>
-                  <v-divider></v-divider>
-                  <p class="title text--primary mt-3 ">
-                    <strong>먹었던 음식을 체크하셨다면, 음식들의 성분을 기반으로 <strong>필요한 영양소의 균형을 맞춘 식단</strong>이 제공됩니다!</strong></p>
-                </v-card-text>
-                <v-btn 
-                  class="subtitle-1 font-weight-bold white--text" 
-                  color="green"
-                  to="../recomendation/weeks"
-                  large >
-                  <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
-                  식단 다시 추천 받기!
-                </v-btn>
+                        <v-card-text>
+                          <v-avatar 
+                            color="#FFE0B2" 
+                            size="50"
+                            >
+                            <strong>{{day[n-1]}}</strong>
+                          </v-avatar>
+                          <v-divider></v-divider>
+                          <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
+                            아침
+                          </v-card>
+                          <p class="ma-5 title text--primary">
+                            아침 식단 정보
+                          </p>
+                          <p class="ma-5 title text--primary">칼로리</p>
+                          <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
+                            점심
+                          </v-card>
+                          <p class="ma-5 title text--primary">
+                            점심 정보
+                          </p>
+                          <p class="ma-5 title text--primary">칼로리</p>
+                          <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
+                            저녁
+                          </v-card>
+                          <p class="ma-5 title text--primary">
+                            저녁 정보
+                          </p>
+                          <p class="ma-5 title text--primary">칼로리</p>
+                          <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
+                            간식
+                          </v-card>
+                          <p class="ma-5 title text--primary">
+                            간식 정보
+                          </p>
+                          <p class="ma-5 title text--primary">칼로리</p>
+                        </v-card-text>
                         <v-scale-transition>
                           <v-icon
                             v-if="active"
@@ -451,6 +457,8 @@ export default {
 
       selectedDate: "",
       totalCallories: 1875,
+
+      day: ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일",],
 
       legendSettings:{ 
         position:'Top' ,
