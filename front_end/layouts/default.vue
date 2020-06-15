@@ -85,10 +85,9 @@
             <v-btn
               icon
               v-bind="attrs"
-              @click="isUpdated = !isUpdated"
               v-on="on"
             >
-              <v-icon>mdi-dots-vertical</v-icon>
+              <v-icon>mdi-account-alert-outline</v-icon>
             </v-btn>
           </template>
 
@@ -98,7 +97,16 @@
             </v-list-item>
             <v-divider></v-divider>
             <v-list-item>
-              <v-list-item-title>내 식단 확인</v-list-item-title>
+              <v-btn 
+                icon 
+                to="/my-diet">
+                <v-icon>mdi-ticket-account</v-icon>
+              </v-btn>
+              <v-btn  
+                text 
+                to="/my-diet">
+                <v-list-item-title>내 식단 확인</v-list-item-title>
+              </v-btn>
             </v-list-item>
             <v-list-item v-if="!email">
               <v-btn 
@@ -202,7 +210,7 @@ export default {
   },
   data () {
     return {
-      navdrawer: false,
+      navdrawer: true,
       isUpdated: false,
       drawerItems: [
         { title: '내 식단 확인', icon: 'mdi-ticket-account', to: '/my-diet'},
