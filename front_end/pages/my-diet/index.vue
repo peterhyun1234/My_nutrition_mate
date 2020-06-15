@@ -1,95 +1,125 @@
 <template>
   <v-app id="inspire">
-      <v-tabs
-        v-model="tab"
-        background-color="amber darken-1"
-        dark
-        fixed-tabs
-      >
-        <v-tab
-          v-for="item in items"
-          :key="item.tab"
-        >
-          {{ item.tab }}
-        </v-tab>
-      </v-tabs>
+    <v-tabs
+      background-color="amber darken-1"
+      dark
+      fixed-tabs
+    >
+      <v-tab>
+      <v-icon left>mdi-account</v-icon>
+        식단 확인 및 체크
+      </v-tab>
+      <v-tab>
+        <v-icon left>mdi-chart-bar-stacked</v-icon>
+        식단 분석
+      </v-tab>
+      <v-tab>
+        <v-icon left>mdi-shield-refresh-outline</v-icon>
+        재점검
+      </v-tab>
+      <v-tab-item style="background-color: #f2f2f2;">
+        <v-container grid-list-xl>
+          <v-row 
+            v-if="!diet">
+            <v-col
+              style="text-align: center;">
+              <v-card
+                class="mt-5 mb-10 pa-3"
+                shaped
+              >
+                <v-img 
+                  src="https://i.imgur.com/zo9v8uL.png"
+                  max-height="700"
+                  contain
+                ></v-img>
+                <v-card-text>
+                  <p class="ma-5 title text--primary">
+                    등록된 식단이 없습니다..
+                  </p>
+                  <v-btn 
+                    class="subtitle-1 font-weight-bold white--text" 
+                    color="green"
+                    to="/recomendation/weeks"
+                    large >
+                    <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
+                    식단 추천 받기!
+                  </v-btn>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
 
-      <v-tabs-items v-model="tab">
-        <v-tab-item
-          v-for="item in items"
-          :key="item.tab"
-        >
-          <v-card flat>
-            <v-card-text>{{ item.content }}</v-card-text>
-          </v-card>
-        </v-tab-item>
-      </v-tabs-items>
-    <v-container>
-      <v-row 
-        v-if="!diet">
-        <v-col
-          style="text-align: center;">
-          <v-card
-            class="mt-5 mb-10 pa-3"
-            shaped
+          <v-row
+            no-gutters
+            v-else
           >
-            <v-img 
-              src="https://i.imgur.com/zo9v8uL.png"
-              max-height="700"
-              contain
-            ></v-img>
-            <v-card-text>
-              <p class="ma-5 title text--primary">
-                등록된 식단이 없습니다..
-              </p>
+            <v-col
+              style="text-align: center;"
+            >
+              <v-data-table
+                :headers="headers"
+                :items="desserts"
+                hide-default-footer
+                class="elevation-1 mb-5 mt-5"
+              ></v-data-table>
+
               <v-btn 
                 class="subtitle-1 font-weight-bold white--text" 
                 color="green"
                 to="/recomendation/weeks"
                 large >
                 <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
-                식단 추천 받기!
+                건강 상태 재점검!
               </v-btn>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-
-      <v-row
-        no-gutters
-        v-else
-      >
-        <v-col
-          style="text-align: center;"
-        >
-          <v-data-table
-            :headers="headers"
-            :items="desserts"
-            hide-default-footer
-            class="elevation-1 mb-5 mt-5"
-          ></v-data-table>
-
-          <v-btn 
-            class="subtitle-1 font-weight-bold white--text" 
-            color="green"
-            to="/recomendation/weeks"
-            large >
-            <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
-            건강 상태 재점검!
-          </v-btn>
-          <v-btn 
-            class="subtitle-1 font-weight-bold white--text" 
-            color="green"
-            disabled
-            to="/recomendation/weeks"
-            large >
-            <v-icon large>mdi-image-move</v-icon> 
-            사진으로 저장하기
-          </v-btn>
-        </v-col>
-        
-      </v-row>
-    </v-container>
+              <v-btn 
+                class="subtitle-1 font-weight-bold white--text" 
+                color="green"
+                disabled
+                to="/recomendation/weeks"
+                large >
+                <v-icon large>mdi-image-move</v-icon> 
+                사진으로 저장하기
+              </v-btn>
+            </v-col>
+            
+          </v-row>
+        </v-container>
+      </v-tab-item>
+      <v-tab-item style="background-color: #f2f2f2;">
+        <v-container grid-list-xl>
+          <v-layout 
+            align-center 
+            justify-center
+            row 
+            wrap
+          >
+            <v-card
+              class="pa-4 ma-3 text-left"
+              outlined
+            >
+            sadasd
+            </v-card>
+          </v-layout>
+        </v-container>
+      </v-tab-item>
+      <v-tab-item>
+        <v-container grid-list-xl>
+          <v-layout 
+            align-center 
+            justify-center
+            row 
+            wrap
+          >
+            <v-card
+              class="pa-4 ma-3 text-left"
+              outlined
+            >
+            sadasd
+            </v-card>
+          </v-layout>
+        </v-container>
+      </v-tab-item>
+    </v-tabs>
   </v-app>
 </template>
 
@@ -185,7 +215,7 @@ export default {
 
     this.email = parsedID
 
-    if(parsedID == null){
+    if(parsedID == "" || parsedID == null){
       this.$router.push('./signin')
     }
 
