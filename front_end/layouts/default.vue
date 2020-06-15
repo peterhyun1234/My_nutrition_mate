@@ -121,7 +121,16 @@
               </v-btn>
             </v-list-item>
             <v-list-item v-else>
-              <v-list-item-title>로그아웃</v-list-item-title>
+              <v-btn 
+                icon 
+                @click="logout">
+                <v-icon>mdi-logout</v-icon>
+              </v-btn>
+              <v-btn  
+                text 
+                @click="logout">
+                <v-list-item-title>로그아웃</v-list-item-title>
+              </v-btn>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -255,7 +264,7 @@ export default {
     //   }
     // },
     callUpdate(){
-      console.log("callUpdate")
+      //console.log("callUpdate")
       
       if(this.isUpdated == false){
         this.isUpdated = true;
@@ -263,6 +272,10 @@ export default {
       else{
         this.isUpdated = false;
       }
+    },
+    logout(){
+      localStorage.removeItem('ID');
+      alert("로그아웃 완료!");
     }
   }
 }
