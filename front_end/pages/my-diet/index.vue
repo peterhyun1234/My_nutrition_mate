@@ -637,6 +637,28 @@ export default {
     if(parsedID == "" || parsedID == null){
       this.$router.push('./signin')
     }
+
+
+
+    var myHeaders = new Headers();
+    myHeaders.append("session", "dummy");
+
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+    fetch("http://110.15.89.125:8080/recommendation", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
+
+    fetch("http://110.15.89.125:8080/dash", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
   },
   methods: {
     init () {

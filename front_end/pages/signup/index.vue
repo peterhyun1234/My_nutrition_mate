@@ -147,11 +147,11 @@
               평소 어지러움과 피로를 어느정도로 느끼시나요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[0]" :mandatory="false" row>
-              <v-radio label="전혀" value="radio-1"></v-radio>
-              <v-radio label="조금" value="radio-2"></v-radio>
-              <v-radio label="보통" value="radio-3"></v-radio>
-              <v-radio label="많이" value="radio-4"></v-radio>
-              <v-radio label="매우" value="radio-5"></v-radio>
+              <v-radio label="전혀" value="1"></v-radio>
+              <v-radio label="조금" value="2"></v-radio>
+              <v-radio label="보통" value="3"></v-radio>
+              <v-radio label="많이" value="4"></v-radio>
+              <v-radio label="매우" value="5"></v-radio>
             </v-radio-group>
           </v-card>
           <v-card
@@ -161,11 +161,11 @@
               다리에 쥐가 자주 나시나요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[1]" :mandatory="false" row>
-              <v-radio label="전혀" value="radio-1"></v-radio>
-              <v-radio label="조금" value="radio-2"></v-radio>
-              <v-radio label="보통" value="radio-3"></v-radio>
-              <v-radio label="많이" value="radio-4"></v-radio>
-              <v-radio label="매우" value="radio-5"></v-radio>
+              <v-radio label="전혀" value="1"></v-radio>
+              <v-radio label="조금" value="2"></v-radio>
+              <v-radio label="보통" value="3"></v-radio>
+              <v-radio label="많이" value="4"></v-radio>
+              <v-radio label="매우" value="5"></v-radio>
             </v-radio-group>
           </v-card>
           <v-card
@@ -175,11 +175,11 @@
               호흡 곤란 증세를 겪은 적이 있으신가요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[2]" :mandatory="false" row>
-              <v-radio label="전혀" value="radio-1"></v-radio>
-              <v-radio label="조금" value="radio-2"></v-radio>
-              <v-radio label="보통" value="radio-3"></v-radio>
-              <v-radio label="많이" value="radio-4"></v-radio>
-              <v-radio label="매우" value="radio-5"></v-radio>
+              <v-radio label="전혀" value="1"></v-radio>
+              <v-radio label="조금" value="2"></v-radio>
+              <v-radio label="보통" value="3"></v-radio>
+              <v-radio label="많이" value="4"></v-radio>
+              <v-radio label="매우" value="5"></v-radio>
             </v-radio-group>
           </v-card>
           <v-card
@@ -189,11 +189,11 @@
               차나 커피를 평소에 얼마나 마시나요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[3]" :mandatory="false" row>
-              <v-radio label="전혀" value="radio-1"></v-radio>
-              <v-radio label="조금" value="radio-2"></v-radio>
-              <v-radio label="보통" value="radio-3"></v-radio>
-              <v-radio label="많이" value="radio-4"></v-radio>
-              <v-radio label="매우" value="radio-5"></v-radio>
+              <v-radio label="전혀" value="1"></v-radio>
+              <v-radio label="조금" value="2"></v-radio>
+              <v-radio label="보통" value="3"></v-radio>
+              <v-radio label="많이" value="4"></v-radio>
+              <v-radio label="매우" value="5"></v-radio>
             </v-radio-group>
           </v-card>
           <v-card
@@ -203,10 +203,10 @@
               혈압 수치가 어느정도인지 아시나요?
             </v-card-subtitle>
             <v-radio-group v-model="Qradios[4]" :mandatory="false" row>
-              <v-radio label="모름" value="radio-1"></v-radio>
-              <v-radio label="낮음" value="radio-2"></v-radio>
-              <v-radio label="보통" value="radio-3"></v-radio>
-              <v-radio label="높음" value="radio-4"></v-radio>
+              <v-radio label="모름" value="1"></v-radio>
+              <v-radio label="낮음" value="2"></v-radio>
+              <v-radio label="보통" value="3"></v-radio>
+              <v-radio label="높음" value="4"></v-radio>
             </v-radio-group>
           </v-card>
           <v-card
@@ -217,13 +217,20 @@
             </v-card-subtitle>
             
             <v-radio-group v-model="Qradios[5]" :mandatory="false" row>
-              <v-radio label="전혀" value="radio-1"></v-radio>
-              <v-radio label="조금" value="radio-2"></v-radio>
-              <v-radio label="보통" value="radio-3"></v-radio>
-              <v-radio label="많이" value="radio-4"></v-radio>
-              <v-radio label="매우" value="radio-5"></v-radio>
+              <v-radio label="전혀" value="1"></v-radio>
+              <v-radio label="조금" value="2"></v-radio>
+              <v-radio label="보통" value="3"></v-radio>
+              <v-radio label="많이" value="4"></v-radio>
+              <v-radio label="매우" value="5"></v-radio>
             </v-radio-group>
           </v-card>
+          <!-- <v-btn
+            color="success"
+            large
+            @click="axiosTest"
+          >
+            axiosTest
+          </v-btn> -->
           <v-btn
             color="warning"
             large
@@ -239,6 +246,7 @@
 
 <script>
 import firebase from 'firebase'
+import axios from 'axios'
 
 var firebaseConfig = {
     apiKey: "AIzaSyC5zhSCHySnmcGc09IR-iATPEj9LAm1ER4",
@@ -295,7 +303,7 @@ export default {
       ],
 
 
-      Qradios: ['radio-3', 'radio-3', 'radio-3', 'radio-3', 'radio-3', 'radio-3',],
+      Qradios: ['3','3','3','3','3','3',],
 
       name: '',
       nameRules: [
@@ -326,6 +334,84 @@ export default {
   },
   
   methods: {
+
+    axiosTest(){
+      console.log(this.age)
+      console.log(this.height)
+      console.log(this.weight)
+      //console.log(this.selected)
+      console.log(this.Qradios)
+
+      const url = `http://15.164.225.191:3000/users`;
+
+      let sendingData = [
+            { id: "name", value: ""},
+            { id: "age", value: 0},
+            { id: "weight", value: 0},
+            { id: "height", value: 0},
+            { id: "allergy", value: []},
+            { id: "question1", value: 3},
+            { id: "question2", value: 3},
+            { id: "question3", value: 3},
+            { id: "question4", value: 3},
+            { id: "question5", value: 3},
+            { id: "question6", value: 3}
+      ]
+
+      sendingData[0].value = this.name
+      sendingData[1].value = this.age
+      sendingData[2].value = this.weight
+      sendingData[3].value = this.height
+
+      for(let i = 0; i < this.selected.length; i++){
+        sendingData[4].value.push(this.selected[i].name)
+        console.log(this.selected[i].name) 
+      }
+
+      for(let i = 0; i < this.Qradios.length; i++){
+        sendingData[i + 5].value = this.Qradios[i]
+      }
+
+      console.log(sendingData)
+
+      // fetch(url, {
+      //     method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      // })
+      // .then(function(response) {
+      //     return response.json();
+      // }).then(function(json) {
+      //     //console.log(json.data);
+      //     const returnObj = JSON.stringify(json.data);
+      //     boxContainer.innerText = `${returnObj}`;
+      // });
+
+
+
+      // fetch(url, {
+      //   method: 'POST', // or 'PUT'
+      //   body: JSON.stringify(this.Qradios), // data can be `string` or {object}!
+      //   headers: {
+      //         'Content-Type': 'application/json'
+      //     }
+      // }).then(function(response) {
+      //     console.log(response);
+      //     return response.json();
+      // }).then(function(json) {
+      //     console.log(json);
+      //     const returnObj = JSON.stringify(json);
+      //     boxContainer.innerText = `${returnObj}`;
+      // });
+
+      // axios.get('http://15.164.225.191:3000/users')
+      
+      //   .then(function(response) {
+      //     console.log(response);
+      //   })
+      //   .catch(function(error) {
+      //     console.log(error);
+      // });
+
+    },
     questionCompleted(){
 
       //console.log(this.age)
@@ -333,6 +419,8 @@ export default {
       //console.log(this.weight)
       //console.log(this.selected)
       //console.log(this.Qradios)
+
+
 
       
       // if(){
