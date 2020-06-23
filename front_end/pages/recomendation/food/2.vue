@@ -43,27 +43,38 @@
                   </v-card-subtitle>
                   <v-divider class="mt-2"></v-divider>
                   <v-card-title class="mb-5">
-                    재료 (1인분 기준)
+                    영양 정보 (1인분 기준 - 250g)
+                    
                   </v-card-title>
 
                   <v-card-subtitle>
-                    -- 밥 한공기
+                    -- 360 kcal
                   </v-card-subtitle>
                   <v-card-subtitle>
-                    -- 당근 1/4개
+                    -- 탄수화물 46.00g
                   </v-card-subtitle>
                   <v-card-subtitle>
-                    -- 피망 1/5개
+                    -- 설탕당 2.00g
                   </v-card-subtitle>
                   <v-card-subtitle>
-                    -- 양파 1/4개
+                    -- 단백질 31.00g
                   </v-card-subtitle>
                   <v-card-subtitle>
-                    -- 닭가슴살 200g
+                    -- 지방 6.00g
                   </v-card-subtitle>
                   <v-card-subtitle>
-                    -- 통깨, 포도씨유, 소금
+                    -- 포화지방 2.700g
                   </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 트랜스 지방 0.000g
+                  </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 콜레스테롤 155mg
+                  </v-card-subtitle>
+                  <v-card-subtitle>
+                    -- 나트륨 290mg
+                  </v-card-subtitle>
+                  
                 </v-card-text>
               </v-flex>
             </v-layout>
