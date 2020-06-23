@@ -278,6 +278,10 @@
         // using localstorage
         //localStorage.setItem("result", JSON.stringify(this.result));
         // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
+
+        let diets = "temp";
+        localStorage.setItem("diets", JSON.stringify(diets));
+
         this.$router.push('../my-diet');
         //console.log("carculateResult");
       },
