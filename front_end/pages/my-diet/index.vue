@@ -147,7 +147,6 @@
                   <v-sheet
                     v-if="slideGroup != null"
                     color="grey lighten-4"
-                    height="200"
                     tile
                   >
                     <v-row
@@ -155,7 +154,134 @@
                       align="center"
                       justify="center"
                     >
-                      <h3 class="title">Selected {{ slideGroup }}</h3>
+                      <v-card
+                        class="ma-5 d-flex flex-wrap-reverse"
+                        color="grey lighten-2"
+                        flat
+                        tile
+                      >
+                        <v-card
+                          class="order-1 pt-4 pb-4 pr-6 pl-6"
+                          outlined
+                          tile
+                        >
+                          <v-avatar 
+                            color="#FFE0B2" 
+                            size="50"
+                            >
+                            <v-icon 
+                              color="#FFA726"
+                              > mdi-food-apple-outline</v-icon>
+                          </v-avatar>
+                          <p class="subtitle-2 text--primary mt-3">
+                            <strong>아침 체크</strong>
+                          </p>
+                          <v-switch v-model="switch1" inset></v-switch>
+                        </v-card>
+                        <v-card
+                          class="order-2 pt-4 pb-4 pr-6 pl-6"
+                          outlined
+                          tile
+                        >
+                          <v-avatar 
+                            color="#FFE0B2" 
+                            size="50"
+                            >
+                            <v-icon 
+                              color="#FFA726"
+                              > mdi-food-variant</v-icon>
+                          </v-avatar>
+                          <p class="subtitle-2 text--primary mt-3">
+                            <strong>점심 체크</strong>
+                          </p>
+                          <v-switch v-model="switch2" inset></v-switch>
+                        </v-card>
+                        <v-card
+                          class="order-3 pt-4 pb-4 pr-6 pl-6"
+                          outlined
+                          tile
+                        >
+                          <v-avatar 
+                            color="#FFE0B2" 
+                            size="50"
+                            >
+                            <v-icon 
+                              color="#FFA726"
+                              > mdi-food</v-icon>
+                          </v-avatar>
+                          <p class="subtitle-2 text--primary mt-3">
+                            <strong>저녁 체크</strong>
+                          </p>
+                          <v-switch v-model="switch3" inset></v-switch>
+                        </v-card>
+                        <v-card
+                          class="order-4 pt-4 pb-4 pr-6 pl-6"
+                          outlined
+                          tile
+                        >
+                          <v-avatar 
+                            color="#FFE0B2" 
+                            size="50"
+                            >
+                            <v-icon 
+                              color="#FFA726"
+                              > mdi-glass-wine</v-icon>
+                          </v-avatar>
+                          <p class="subtitle-2 text--primary mt-3">
+                            <strong>간식 체크</strong>
+                          </p>
+                          <v-switch v-model="switch4" inset></v-switch>
+                        </v-card>
+                      </v-card>
+                    </v-row>
+                    <v-row
+                      class="fill-height"
+                      align="center"
+                      justify="center"
+                    >
+                      <v-card
+                        class="ma-5 d-flex flex-wrap-reverse"
+                        color="grey lighten-2"
+                        flat
+                      >
+                        <v-card
+                          class="order-1 pa-3"
+                          outlined
+                        >
+                          <v-avatar 
+                            color="indigo" 
+                            size="50"
+                            >
+                            <v-icon 
+                              color="white"
+                              > mdi-cloud-search-outline</v-icon>
+                          </v-avatar>
+                        </v-card>
+                        <v-card
+                          class="order-2 pa-3"
+                          outlined
+                          tile
+                        >
+                          <v-text-field
+                            class="mx-4"
+                            flat
+                            hide-details
+                            label="다른 음식 검색"
+                            solo-inverted
+                          ></v-text-field>
+                        </v-card>
+                        <v-card
+                          class="order-3 pa-3"
+                          outlined
+                          tile
+                        >
+                          <v-btn 
+                            class="subtitle-1 font-weight-bold white--text" 
+                            color="green"> 
+                            등록
+                          </v-btn>
+                        </v-card>
+                      </v-card>
                     </v-row>
                   </v-sheet>
                 </v-expand-transition>
@@ -459,6 +585,12 @@ export default {
   },
   data () {
     return {
+
+      switch1: false,
+      switch2: false,
+      switch3: false,
+      switch4: false,
+
 
       slideGroup: null,
 
