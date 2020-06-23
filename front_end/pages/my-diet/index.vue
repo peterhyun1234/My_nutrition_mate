@@ -97,31 +97,39 @@
                           <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
                             아침
                           </v-card>
-                          <p class="ma-5 title text--primary">
-                            아침 식단 정보
+                          <p class="ma-5 subtitle-2 text--primary">
+                            {{desserts[0][n-1].diet}}
                           </p>
-                          <p class="ma-5 title text--primary">칼로리</p>
+                          <p class="ma-5 subtitle-2 text--secondary">
+                            {{desserts[0][n-1].kcal}}
+                          </p>
                           <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
                             점심
                           </v-card>
-                          <p class="ma-5 title text--primary">
-                            점심 정보
+                          <p class="ma-5 subtitle-2 text--primary">
+                            {{desserts[1][n-1].diet}}
                           </p>
-                          <p class="ma-5 title text--primary">칼로리</p>
+                          <p class="ma-5 subtitle-2 text--secondary">
+                            {{desserts[1][n-1].kcal}}
+                          </p>
                           <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
                             저녁
                           </v-card>
-                          <p class="ma-5 title text--primary">
-                            저녁 정보
+                          <p class="ma-5 subtitle-2 text--primary">
+                            {{desserts[2][n-1].diet}}
                           </p>
-                          <p class="ma-5 title text--primary">칼로리</p>
+                          <p class="ma-5 subtitle-2 text--secondary">
+                            {{desserts[2][n-1].kcal}}
+                          </p>
                           <v-card class="subtitle-1 text--primary mt-3" color="#FFE0B2">
                             간식
                           </v-card>
-                          <p class="ma-5 title text--primary">
-                            간식 정보
+                          <p class="ma-5 subtitle-2 text--primary">
+                            {{desserts[3][n-1].diet}}
                           </p>
-                          <p class="ma-5 title text--primary">칼로리</p>
+                          <p class="ma-5 subtitle-2 text--secondary">
+                            {{desserts[3][n-1].kcal}}
+                          </p>
                         </v-card-text>
                         <v-scale-transition>
                           <v-icon
@@ -568,51 +576,51 @@ export default {
       ],
 
       desserts: [
-        {
-          name: '아침',
-          day1: "다섯가지 나물밥과 제육볶음(346kcal)",
-          day2: "곤드레 나물밥과 닭가슴살 슬라이스(346kcal)",
-          day3: "귀리현미 잡곡밥과 표고버섯 불고기(346kcal)",
-          day4: "탄두리 닭가슴살 현미밥과 참치오믈렛(346kcal)",
-          day5: "곤드레 나물밥과 닭가슴살 슬라이스(346kcal)",
-          day6: "귀리현미 잡곡밥과 표고버섯 불고기(346kcal)",
-        },
-        {
-          name: '점심',
-          day1: "자유식 (500kcal)",
-          day2: "자유식 (500kcal)",
-          day3: "자유식 (500kcal)",
-          day4: "자유식 (500kcal)",
-          day5: "자유식 (500kcal)",
-          day6: "자유식 (500kcal)",
-        },
-        {
-          name: '저녁',
-          day1: "탄두리 닭가슴살 현미밥과 참치오믈렛(346kcal)",
-          day2: "퀴로나 영양밥과 닭가슴살 스테이크(346kcal)",
-          day3: "닭가슴살 볶음밥과 두부 스테이크(346kcal)",
-          day4: "다섯가지 나물밥과 제육볶음(346kcal)",
-          day5: "닭가슴살 볶음밥과 두부 스테이크(346kcal)",
-          day6: "퀴로나 영양밥과 닭가슴살 스테이크(346kcal)",
-        },
-        {
-          name: '간식',
-          day1: "그릭요거트 (105kcal)",
-          day2: "그릭요거트 (105kcal)",
-          day3: "그릭요거트 (105kcal)",
-          day4: "그릭요거트 (105kcal)",
-          day5: "그릭요거트 (105kcal)",
-          day6: "그릭요거트 (105kcal)",
-        },
-        {
-          name: '총 칼로리',
-          day1: "1105kcal",
-          day2: "1205kcal",
-          day3: "1405kcal",
-          day4: "1305kcal",
-          day5: "1205kcal",
-          day6: "1105kcal",
-        },
+        [
+          {diet: "다섯가지 나물밥과 돼지 제육볶음", kcal: "356kcal"},
+          {diet: "곤드레 나물밥과 닭가슴살 슬라이스", kcal: "346kcal"},
+          {diet: "귀리현미 잡곡밥과 표고버섯 불고기", kcal: "446kcal"},
+          {diet: "탄두리 닭가슴살 현미밥과 참치오믈렛", kcal: "347kcal"},
+          {diet: "곤드레 나물밥과 닭가슴살 슬라이스", kcal: "423kcal"},
+          {diet: "귀리현미 잡곡밥과 표고버섯 불고기", kcal: "478kcal"},
+          {diet: "탄두리 닭가슴살 현미밥과 참치오믈렛", kcal: "516kcal"}
+        ],
+        [
+          {diet: "자유식 ", kcal: "500kcal"},
+          {diet: "자유식 ", kcal: "500kcal"},
+          {diet: "자유식 ", kcal: "500kcal"},
+          {diet: "자유식 ", kcal: "500kcal"},
+          {diet: "자유식 ", kcal: "500kcal"},
+          {diet: "자유식 ", kcal: "500kcal"},
+          {diet: "자유식 ", kcal: "500kcal"}
+        ],
+        [
+          {diet: "탄두리 닭가슴살 현미밥과 참치오믈렛", kcal: "516kcal"},
+          {diet: "퀴로나 영양밥과 닭가슴살 스테이크", kcal: "478kcal"},
+          {diet: "닭가슴살 볶음밥과 두부 스테이크", kcal: "387kcal"},
+          {diet: "다섯가지 나물밥과 돼지 제육볶음", kcal: "437kcal"},
+          {diet: "닭가슴살 볶음밥과 두부 스테이크", kcal: "346kcal"},
+          {diet: "퀴로나 영양밥과 닭가슴살 스테이크", kcal: "467kcal"},
+          {diet: "다섯가지 나물밥과 돼지 제육볶음", kcal: "516kcal"}
+        ],
+        [
+          {diet: "그릭요거트 ", kcal: "105kcal"},
+          {diet: "그릭요거트 ", kcal: "105kcal"},
+          {diet: "그릭요거트 ", kcal: "105kcal"},
+          {diet: "그릭요거트 ", kcal: "105kcal"},
+          {diet: "그릭요거트 ", kcal: "105kcal"},
+          {diet: "그릭요거트 ", kcal: "105kcal"},
+          {diet: "그릭요거트 ", kcal: "105kcal"}
+        ],
+        [
+          "1415kcal",
+          "1405kcal",
+          "1605kcal",
+          "1505kcal",
+          "1504kcal",
+          "1385kcal",
+          "1545kcal",
+        ],
       ],
     }
   },
