@@ -625,9 +625,9 @@ export default {
   },
   mounted() {
     const recievedDiet = localStorage.getItem("diets");
-    const parsedDiet = JSON.parse(recievedDiet);
+    //const parsedDiet = JSON.parse(recievedDiet);
 
-    this.diet = parsedDiet
+    this.diet = recievedDiet
 
     const recievedID = localStorage.getItem("ID");
     const parsedID = JSON.parse(recievedID);
@@ -640,25 +640,25 @@ export default {
 
 
 
-    var myHeaders = new Headers();
-    myHeaders.append("session", "dummy");
+    // var myHeaders = new Headers();
+    // myHeaders.append("session", "dummy");
 
-    var requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-      redirect: 'follow'
-    };
+    // var requestOptions = {
+    //   method: 'GET',
+    //   headers: myHeaders,
+    //   redirect: 'follow'
+    // };
 
-    fetch("http://110.15.89.125:8080/recommendation", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    // fetch("https://hci.lminjae.ml/recommendation", requestOptions)
+    //   .then(response => response.text())
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log('error', error));
 
 
-    fetch("http://110.15.89.125:8080/dash", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    // fetch("https://hci.lminjae.ml/dash", requestOptions)
+    //   .then(response => response.text())
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log('error', error));
   },
   methods: {
     init () {
