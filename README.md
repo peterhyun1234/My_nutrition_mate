@@ -53,18 +53,19 @@ $ npm run generate
 $ cd /back-end
 
 # install node and npm (in ubuntu)
-    $ sudo apt-get update 
-    $ sudo apt-get install nodejs
-    $ sudo apt-get install npm
-    $ npm init --yes
-    $ npm install express mysql --save
+$ sudo apt-get update 
+$ sudo apt-get install nodejs
+$ sudo apt-get install npm
+$ npm init --yes
+$ npm install express mysql --save
 
 # start node server with exit state(background)    
-    $ nohup npm start &
-    $ exit
+$ nohup npm start &
+$ exit
+
 # start node server with auto_modifying state(Daemon process)
-    $ nohup nodemon </dev/null &
-    $ exit
+$ nohup nodemon </dev/null &
+$ exit
 ```
 
 ## 5. I felt that
