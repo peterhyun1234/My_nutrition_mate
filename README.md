@@ -1,57 +1,75 @@
-# My_nutrition_mate
-> 2020 Summer Human Interaction: Group project
+# My_nutrition_mate(2020.03 - 2020.07)
+> 2020 Summer Humman Computer Interaction: My Nutrition Mate
 
-    머라머라
+## 1. Technology used
+### Vue.js + Nuxt.js >
+    My Nutrition 웹앱 front-end를 만들기 위해서 사용
+### Node.js + TypeScript >
+    프로세싱한 데이터를 front-end로 API를 공급하는 Server (in AWS EC2)  
+### RDBMS >   
+    - MySQL: 음식과 영양소에 대한 정보 저장
+    - Firebase: 사용자에 대한 정보 저장
 
-![](../header.png)
+## 2. directory description
+### 2.1 /front-end  
+    - Netlify로 자동으로 변경 및 배포되는 front-end 코드
 
-## 설치 방법
+### 2.2 /back-end
+    - AWS EC2 서버에서 데몬 프로세스로 있는 node.js 코드
 
-OS X & 리눅스:
+## 3. Development result
+### 3.1 내 식단 확인
+(사진 1)
+### 3.2 식사 추천
+(사진 2)
+### 3.3 식사 추천
+(사진 3)
 
-```sh
-npm install 머시기머시기 --save
+## 4. How to process
+
+### 4.1. Running front-end
+
+``` bash
+# go to directory
+$ cd /front-end
+
+# install dependencies
+$ npm install # Or yarn install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm start
+
+# generate static project
+$ npm run generate
+```
+### 4.2. Running back-end
+
+``` bash
+# go to directory
+$ cd /back-end
+
+# install node and npm (in ubuntu)
+    $ sudo apt-get update 
+    $ sudo apt-get install nodejs
+    $ sudo apt-get install npm
+    $ npm init --yes
+    $ npm install express mysql --save
+
+# start node server with exit state(background)    
+    $ nohup npm start &
+    $ exit
+# start node server with auto_modifying state(Daemon process)
+    $ nohup nodemon </dev/null &
+    $ exit
 ```
 
-윈도우:
+## 5. I felt that
+    - UI보단 UX를 중점적으로 생각하면서 개발하라는 교수님의 말을 따라 개발하다보니 사용자가 원하는 것을 더 생각해볼 수 있어서 개발해서 의미가 있었다. 
+    - HCI가 개발에 있어서 꼭 필요하다고 생각했다. 특히 색의 조합이 사용자에게 끼치는 영향을 체감할 수 있어서 좋았다. 
 
-```sh
-edit autoexec.bat
-```
-
-## 사용 예제
-
-스크린 샷과 코드 예제를 통해 사용 방법을 자세히 설명ㄱㄱ
-
-_더 많은 예제와 사용법은 [Wiki][wiki]를 참고하세요._
-
-## 개발 환경 설정
-
-```sh
-make install 
-npm test (머시기머시기)
-```
-
-## 정보
-
-개발자 정보~~
-
-MIT 라이센스를 준수하며 ``LICENSE``에서 자세한 정보를 확인할 수 있습니다.
-
-[https://github.com/yourname/github-link](https://github.com/dbader/)
-
-## 기여 방법 (하지마세요~)
-
-1. (<https://github.com/yourname/yourproject/fork>)을 포크합니다.
-2. (`git checkout -b feature/fooBar`) 명령어로 새 브랜치를 만드세요.
-3. (`git commit -am 'Add some fooBar'`) 명령어로 커밋하세요.
-4. (`git push origin feature/fooBar`) 명령어로 브랜치에 푸시하세요. 
-5. 풀리퀘스트를 보내주세요.
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
+## 6. contact
+    e-mail: peterhyun1234@gmail.com
