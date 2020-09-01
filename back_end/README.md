@@ -221,10 +221,10 @@ $ npx sequelize db:create
 * sequelize init명령어를 실행하면 프로젝트 폴더에서 config, models, migrations, seeders 폴더라 생성된다.
 
 ## 5.3.1 config
-Create 혹은 접근할 DB에 대한 정보
+    Create 혹은 접근할 DB에 대한 정보
 
 ## 5.3.2 models
-model(table)
+    model은 table이라고 생각하면 편함
 
 
 ## 5.3.3 migrations
