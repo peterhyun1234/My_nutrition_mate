@@ -107,15 +107,87 @@ $ pm2 show (name)
 # 상세정보 + 동작되는 과정 
 $ pm2 monit
 ```
-
-### 4.2. dependencies vs. devDependencies
-
-* npm install 시 컴파일 옵션같은 건가?
-
-### 4.3. typing이 제대로 되고 있는지 검사
+### 4.2. typing이 제대로 되고 있는지 검사
 ``` bash
 $ npx tsc --traceResolution
 ```
+
+## 5. mysql + sequelize + dotenv 적용
+## 5.1. mysql
+``` bash
+1. mysql을 설치하고, 스키마와 계정을 생성
+
+# mysql 접속
+$ mysql -u 사용자명 -p dbname
+
+# 현재 사용자 목록 확인
+mysql> use mysql;
+mysql> select User,Host from user;
+
+# 권한 확인 'username'@'hostname'
+mysql> SHOW GRANTS FOR 'username'@'%' 
+
+# 생성 후 필수 권한만 부여. - 실서비스 계정은 가급적 이렇게 필요 권한만 부여할 것.
+mysql> CREATE USER username@localhost IDENTIFIED BY 'userpassword'
+mysql> GRANT SELECT,INSERT,UPDATE,DELETE ON dbname.* TO 'username'@'localhost';
+ 
+# 생성과 전체 권한 일괄 부여
+mysql> GRANT ALL PRIVILEGES ON dbname.* TO username@localhost IDENTIFIED BY 'password';
+
+# 데이터베이스를 생성하고,
+mysql> CREATE DATABASE dbname;
+ 
+# 현재 존재하는 데이터베이스 목록
+mysql> SHOW DATABASES;
+ 
+# 특정 데이타베이스를 사용하겠다고 선언
+mysql> USE dbname;
+ 
+# 쓸모 없으면 삭제
+mysql> DROP DATABASE [IF EXISTS] dbname;
+
+# 테이블 생성
+mysql> CREATE TABLE 테이블명 (
+    _id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(32) NOT NULL,
+    job VARCHAR(64) DEFAULT 'student',
+    phone VARCHAR(12)
+)
+
+# 테이블 수정
+mysql> alter table 테이블명 add 새로추가할필드명과 타입 after 필드이름;
+
+# 테이블 구조
+mysql> EXPLAIN tablesname;
+
+# INSERT
+mysql> INSERT INTO tablename (col1, col2, ...) VALUES(값1, 값2, ...);
+
+# UPDATE
+mysql> UPDATE tablename SET col1=새값 WEHER 조건
+
+# DELETE
+mysql> DELETE FROM tablename WEHRE 조건
+
+# 나가기
+mysql> EXIT;
+
+```
+## 5.2. sequelize
+``` bash
+$ npm i sequelize
+$ npm i sequelize-cli
+
+# sequelize 기본 디렉토리 설정
+$ npx sequelize init
+
+# sequelize로 db를 직접 control 가능
+$ npx sequelize db:create
+```
+
+* 자바스크립트 코드로 mysql을 제어
+* sequelize는 ORM(Object-Relational Mapping)로 분류
+* 비번 같은 경우 .env를 통해서 보관하는 과정이 있으면 좋음
 
 ### 4.4. 필요한 packages 설치
 
@@ -131,17 +203,4 @@ $ npm i @types/morgan @types/cors @types/cookie-parser @types/express-session @t
 $ npm i @types/hpp @types/helmet 
 $ npm i @types/passport-local @types/bcrypt
 ```
-
-### 4.5. Sequelize 
-``` bash
-$ npm i sequelize
-$ npm i sequelize-cli
-
-$ npx sequelize init
-$ npx sequelize db:create
-```
-
-* 쌩 쿼리 날리는 건 좋지 않음
-* ORM을 통해서 쿼리를 보내는 걸 선호
-* 비번 같은 경우 .env를 통해서 보관하는 과정이 있으면 좋음
 
