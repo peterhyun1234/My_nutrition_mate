@@ -112,7 +112,7 @@ $ pm2 monit
 $ npx tsc --traceResolution
 ```
 
-## 5. mysql + sequelize + dotenv 적용
+## 5. mysql + dotenv + sequelize 적용
 ## 5.1. mysql
 ``` bash
 1. mysql을 설치하고, 스키마와 계정을 생성
@@ -173,7 +173,40 @@ mysql> DELETE FROM tablename WEHRE 조건
 mysql> EXIT;
 
 ```
-## 5.2. sequelize
+
+## 5.2. dotenv
+* DB ID, password 이나
+* JWT, access token등을 직접적으로 보여주지 않을 수 있다.
+
+## 5.2.1. install
+``` bash
+# with npm 
+npm i dotenv
+
+# with ts
+npm i @types/dotenv
+```
+## 5.2.1. set up
+1. 프로젝트 루트에 .env 파일을 만듬
+
+2. .env에 다음과 같은 정보들을 기입
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=0000
+```
+
+## 5.2.2. how to import and use
+```javascript
+import * as dotenv from 'dotenv'
+
+dotenv.config();
+
+//console.log(process.env.DB_USER)
+```
+
+
+## 5.3. sequelize
 ``` bash
 $ npm i sequelize
 $ npm i sequelize-cli
@@ -184,6 +217,20 @@ $ npx sequelize init
 # sequelize로 db를 직접 control 가능
 $ npx sequelize db:create
 ```
+
+* sequelize init명령어를 실행하면 프로젝트 폴더에서 config, models, migrations, seeders 폴더라 생성된다.
+
+## 5.3.1 config
+Create 혹은 접근할 DB에 대한 정보
+
+## 5.3.2 models
+model(table)
+
+
+## 5.3.3 migrations
+
+## 5.3.4 seeders
+
 
 * 자바스크립트 코드로 mysql을 제어
 * sequelize는 ORM(Object-Relational Mapping)로 분류
