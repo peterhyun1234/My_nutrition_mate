@@ -19,16 +19,19 @@
 
 ## 3. Development result
 ### Main 화면
+
 ![mnm1](https://user-images.githubusercontent.com/46476398/92077322-21eb5f80-edf7-11ea-90d1-b3e813ae5704.JPG)
 
-
 ### 3.1 내 식단 확인
+
 ![mnm2](https://user-images.githubusercontent.com/46476398/92077324-231c8c80-edf7-11ea-8c02-b13cfc76a001.JPG)
 
 ### 3.2 식단 분석
+
 ![mnm3](https://user-images.githubusercontent.com/46476398/92077325-23b52300-edf7-11ea-894d-b5fdd9ef35eb.JPG)
 
 ### 3.3 식사 추천
+
 ![mnm4](https://user-images.githubusercontent.com/46476398/92077326-244db980-edf7-11ea-9ff5-65782d053c27.JPG)
 
 ## 4. How to process
