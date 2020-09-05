@@ -3,6 +3,18 @@ import * as dotenv from 'dotenv'
 
 dotenv.config();
 
+
+
+var sequelize = require('./models/index').sequelize;
+sequelize.sync();
+
+const { Person } = require('../models');
+Person.create({
+  name: "Tony",
+  age: 25
+});
+
+
 //console.log(process.env.DB_USER)
 
 class App {
