@@ -13,6 +13,7 @@
 ## 2. directory description
 ### 2.1 /front-end  
     - Netlify로 자동으로 변경 및 배포되는 front-end 코드
+    - SSR와 CSR(SPA)의 장점을 가지도록 Nuxt  
 
 ### 2.2 /back-end
     - AWS EC2 서버에서 데몬 프로세스로 있는 node.js 코드
