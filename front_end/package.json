@@ -18,7 +18,7 @@
         "@syncfusion/ej2-vue-charts": "^18.1.55",
         "axios": "^0.19.2",
         "firebase": "^7.14.6",
-        "nuxt": "^2.11.0",
+        "nuxt": "^2.15.8",
         "nuxt-fontawesome": "^0.4.0"
     },
     "devDependencies": {
